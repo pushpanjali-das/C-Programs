@@ -1,0 +1,29 @@
+//Check Armstrong Number
+#include<stdio.h>
+#include<math.h>
+int dig(num){
+    int count =0;
+    while(num>0){
+        count +=1;
+        num = num /10;
+    }
+    return count;
+}
+void armstrong(int num,int pow1){
+    int sum=0,rem1,temp=num;
+    while(num>0){
+        rem1 = num%10;
+        sum = sum + pow(rem1,pow1);
+        num =  num/10;
+    }
+    printf("The sum is %d\n",sum);
+    (temp==sum)?printf("Yes"):printf("No");
+}
+main(){
+    int num,pow1;
+    printf("Enter the number\n");
+    scanf("%d",&num);
+    pow1 = dig(num);
+    printf("Number of digits is %d\n",pow1);
+    armstrong(num,pow1);
+}

@@ -1,0 +1,33 @@
+//Make a Simple Calculator
+#include<stdio.h>
+void calculator(int a,int b,char op){
+    switch(op){
+        case '+':
+            printf("Addition is %d",a+b);
+            break;
+        case '-':
+            printf("Subtraction is %d",a-b);
+            break;
+        case '*':
+            printf("Multiplication is %d",a*b);
+            break;
+        case '/':
+            printf("Division is %d",a/b);
+            break;
+        case '%':
+            printf("Modulo division is %d",a%b);
+            break;
+        default:
+            printf("Enter a valid symbol");
+            break;
+    }
+}
+main(){
+    int num1,num2;
+    char op;
+    printf("Enter 2 integers\n");
+    scanf("%d%d",&num1,&num2);
+    printf("Enter the symbol of operation.Use the below list for reference\naddition +\nsubtraction -\nmultiplication *\ndivision /\nmodulo division %\n");
+    scanf(" %c",&op);
+    calculator(num1,num2,op);
+}

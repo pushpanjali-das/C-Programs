@@ -1,0 +1,33 @@
+//Armstrong Numbers from 1 to 1000
+#include<stdio.h>
+#include<math.h>
+int dig(num){
+    int count =0;
+    while(num>0){
+        count +=1;
+        num = num /10;
+    }
+    return count;
+}
+void armstrong(int num,int pow1){
+    int sum=0,rem1,temp=num;
+    while(num>0){
+        rem1 = num%10;
+        sum = sum + pow(rem1,pow1);
+        num =  num/10;
+    }
+    
+    if(sum==temp){
+        printf("%d\n",temp);
+    }
+}
+main(){
+    int i,num1,num2,pow1;
+    printf("Enter 2 intervals\n");
+    scanf("%d%d",&num1,&num2);
+    for(i=num1;i<=num2;i++){
+        pow1 = dig(i);
+        armstrong(i,pow1);     
+   
+    }
+}

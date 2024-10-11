@@ -1,0 +1,39 @@
+/*Diamond Pyramid of ” * ”
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+*/
+
+#include<stdio.h>
+void spaces(int s){
+    for(int j=1;j<=s;j++){
+        printf(" ");
+    }
+}
+void stars(int star){
+    for(int y=1;y<=star;y++){
+        printf("* ");
+    }
+    printf("\n");
+}
+int main(){
+    int n;
+    printf("enter value of n\n");
+    scanf("%d",&n);
+    for(int i=1;i<=2*n-1;i++){
+        if(i<=n){
+            spaces(n-i);
+            stars(i);
+        }
+        else{
+            spaces(i-n);
+            stars(2*n-i);
+        }
+    }
+}

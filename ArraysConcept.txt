@@ -1,0 +1,41 @@
+Array is a kind of data structure.
+Array is a collection of data or values of same data type.
+Values inside an array are stored in continuous memory locations.
+EX: int arr[5]={1,2,3,4,5};
+	Here size of the array is 5, means it can store upto 5 integer values
+	and index start from 0 to 5-1=4.
+
+Passing An Array As an Argument to a Function:
+Array follow PASS BY REFERENCE CONCEPT only. 
+Changes made inside a user defined function would affect the original array
+as we need to pass the address of the array while passing it as an argument 
+to a function.
+
+To pass address of the array, name of the array is enough.
+To store the base address we need to use a pointer.
+Pointer:
+	int *ptr;
+	ptr = arr;
+here *ptr == ptr[];
+
+*ptr == arr[0];
+
+to print values of the array we can use the following method.
+
+void printArray(int *ptr)
+{
+	for(int i=0;i<5;i++)
+	{
+		printf("%d ",*(ptr+i));
+	}
+
+}
+
+void printArray(int b[])
+{
+	for(int i=0;i<5;i++)
+	{
+		printf("%d ",b[i]);  // b[] == *b, b[i]== *(b+i);
+	}
+
+}

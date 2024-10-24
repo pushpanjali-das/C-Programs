@@ -1,0 +1,25 @@
+/* Prime numbers between range using Functions */
+#include<stdio.h>
+void isprime(int n1,int n2)
+{
+    int c=0;
+    for(int i=n1;i<=n2;i++)
+    {
+        for(int j=1;j<=i;j++)
+        {
+            if(i%j==0)
+            {
+                c++;
+            }
+        }
+        (c==2)?printf("%d is prime\n",i):printf("%d is not prime\n",i);
+        c=0;
+    }
+}
+main()
+{
+    int n1,n2;
+    printf("enter n1,n2 values\n");
+    scanf("%d%d",&n1,&n2);
+    isprime(n1,n2);
+}

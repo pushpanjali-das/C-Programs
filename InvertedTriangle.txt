@@ -1,0 +1,27 @@
+/*
+    * * * * * 
+     * * * * 
+      * * * 
+       * * 
+        *
+*/
+#include<stdio.h>
+main()
+{
+    int n;
+    printf("enter n value\n");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
+    {
+        for(int sp=i;sp-1>=1;sp--)
+        {
+            printf(" ");
+        }
+        for(int star=i;star<=n;star++)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
+}
+    

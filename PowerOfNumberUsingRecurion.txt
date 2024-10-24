@@ -1,0 +1,21 @@
+/* Power of a number using recursion */
+
+#include<stdio.h>
+int powp(int num,int p)
+{
+    if(p<=0)
+    {
+        return 1;
+    }
+    p--;
+    return num*powp(num,p);
+    
+}
+main()
+{
+    int n,p,powva;
+    printf("enter number and power value\n");
+    scanf("%d%d",&n,&p);
+    powva=powp(n,p);
+    printf("power value is %d",powva);
+}

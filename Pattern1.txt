@@ -1,0 +1,25 @@
+/*
+        1 
+      2 2 2 
+    3 3 3 3 3 
+  4 4 4 4 4 4 4 
+5 5 5 5 5 5 5 5 5 
+*/
+#include<stdio.h>
+main(){
+    int n;
+    printf("enter value of n\n");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+        for(int sp=1;sp<=n-i;sp++){
+            printf(" ");
+        }
+        for(int ls=i;ls>=1;ls--){
+            printf("%d",i);
+        }
+        for(int rs=2;rs<=i;rs++){
+            printf("%d",i);
+        }
+        printf("\n");
+    }
+}

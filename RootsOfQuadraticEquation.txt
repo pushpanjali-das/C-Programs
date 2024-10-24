@@ -1,0 +1,29 @@
+/* C Program for Quadratic Equation Roots */
+#include<stdio.h>
+#include<math.h>
+void roots(int a,int b,int c,int d)
+{
+    float r1,r2;
+    int v= sqrt(d);
+    if(d>0)
+    {
+        r1=(-b-v)/(2*a);
+        r2=(-b+v)/(2*a);
+        printf("roots are: %f and %f",r1,r2);
+    }
+    else if(d==0)
+    {
+        r1=-(b)/(2.0*a);
+        r2=r1;
+        printf("roots are: %f and %f",r1,r2);
+    }
+    
+}
+main()
+{
+    int a,b,c,d;
+    printf("enter a,b,c values\n");
+    scanf("%d%d%d",&a,&b,&c);
+    d= (b*b)-(4*a*c);
+    roots(a,b,c,d);
+}

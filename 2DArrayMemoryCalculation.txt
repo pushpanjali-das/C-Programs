@@ -1,0 +1,20 @@
+In C, when you declare a 2D array, such as int arr[3][4];, 
+the compiler needs to know the size of each row (the number of columns) in advance to correctly calculate memory addresses for each element in the array.
+
+Here's why this is necessary:
+
+1). Memory Layout of 2D Arrays:
+
+C stores 2D arrays in a contiguous block of memory. 
+For example, int arr[3][4]; (a 3x4 array) will occupy 12 int locations in memory, laid out in a single linear sequence.
+To access an element, such as arr[i][j], the compiler calculates the memory location based on the row (i) and column (j) indices. 
+This calculation requires the compiler to know the width of each row (number of columns) to find the right offset.
+
+
+2). Compile-Time Requirement:
+
+The calculation for accessing an element, arr[i][j], is typically done as base_address + (i * num_columns + j) * element_size.
+Here, num_columns needs to be a known, constant value at compile time to allow the compiler to compute this address accurately.
+Function Argument Requirement:
+
+When passing a 2D array to a function, C still requires the number of columns to be fixed so that the function can perform memory address calculations for any a[i][j] access. If the column size isn't known at compile time, the compiler can't determine the correct offsets for accessing the array elements.

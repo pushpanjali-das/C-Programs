@@ -1,0 +1,24 @@
+/* Program For Maximum and Minimum of an Array */
+
+#include<stdio.h>
+int main()
+{
+    int arr[]={100,56,-890,287,565,1000,87};
+    int size = sizeof(arr)/sizeof(int);
+    int max,min;
+    max = arr[size-1];
+    min =  arr[0];
+    for(int i=0;i<size;i++)
+    {
+        if(min>arr[i])
+        {
+            min = arr[i];
+        }
+        if(max < arr[i])
+        {
+            max = arr[i];
+        }
+    }
+    printf("max is %d and min is %d",max,min);
+    return 0;
+}

@@ -1,0 +1,40 @@
+/* W.A.P to perform all the arithmetic operations */
+#include<stdio.h>
+main()
+{
+    int a,b,choice;
+    char x;
+    label1:
+    printf("enter a,b values\n");
+    scanf("%d%d",&a,&b);
+    printf("***MENU***\n");
+    printf("1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Remainder\n");
+    printf("enter your choice\n");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1:
+            printf("Addition is %d\n",a+b);
+            break;
+        case 2:
+            printf("Subtraction is %d\n",a-b);
+            break;
+        case 3:
+            printf("Multiplication is %d\n",a*b);
+            break;
+        case 4:
+            printf("Division is %f\n",(float)a/b);
+            break;
+        case 5:
+            printf("Remainder is %d\n",a%b);
+            break;
+        default:
+            printf("Invalid choice has been made\n");
+    }
+    printf("Enter S to continue to perform other operations as well\n");
+    scanf(" %c",&x);
+    if(x=='S'|| x=='s')
+    {
+        goto label1;
+    }
+}

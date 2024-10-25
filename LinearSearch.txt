@@ -1,0 +1,28 @@
+/* Program to search for an element in the array
+
+                LINEAR SEARCH
+*/
+
+#include<stdio.h>
+int main()
+{
+    int arr[]={22,22};
+    int size = sizeof(arr)/sizeof(int);
+    int se,flag=0;
+    printf("enter the element to be searched\n");
+    scanf("%d",&se);
+    for(int i=0;i<size;i++)
+    {
+        if(se==arr[i])
+        {
+            printf("%d has been found at the index %d\n",se,i);
+            flag++;
+           // printf("no of traversals: %d",no);
+        }
+    }
+    if(flag==0)
+        {
+            printf("%d not found",se);
+        }
+    return 0;
+}

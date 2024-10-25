@@ -1,45 +1,74 @@
-/* 2D Array Multiplication 
-
-  a[2][3]= 1 2 3
-           4 5 6
-        
-  b[3][2]= 1 1
-           1 1
-           1 1
-           
-  c[2][2]= _ _
-           _ _
-          
- For array multiplication, a[r1][c1], b[r2][c2]
-        c1==r2;
-        then only
-        resultant matrix would be
-        c[r1][c2];
-
+/*
+    a[2][3]=1 2 3 
+            4 5 6
+      
+    b[3][2]=7 8 
+            9 10 
+            11 12 
+            
+      
+    c[4][4]= 58 64 
+             139 154 
 */
-
 #include<stdio.h>
-int main()
+void input(int a[20][20],int r,int c)
 {
-    int a[2][3]={1,2,3,4,5,6};
-    int b[3][2]={1,1,1,1,1,1};
-    int c[2][2];
-    for(int i=0;i<2;i++)
+    for(int i=0;i<r;i++)
     {
-        for(int j=0;j<2;j++)
+        for(int j=0;j<c;j++)
         {
-            for(int k=0;k<3;k++)
+            scanf("%d",&a[i][j]);
+        }
+    }
+}
+void output(int a[20][20],int r,int c)
+{
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+}
+void multiplication(int a[20][20],int r1,int c1,int b[20][20],int r2,int c2,int c[20][20])
+{
+    for(int i=0;i<r1;i++)
+    {
+        for(int j=0;j<c2;j++)
+        {
+            for(int k=0;k<c1;k++)
             {
-                c[i][j] +=a[i][k]*b[k][j];
+                c[i][j] += a[i][k]*b[k][j];
             }
         }
     }
-    for(int i=0;i<2;i++)
+}
+int main()
+{
+    int r1,c1,r2,c2;
+    printf("enter number of rows and columns in array1 and rows and columns in array2\n");
+    scanf("%d%d%d%d", &r1, &c1, &r2, &c2);
+    // Debugging statement to check input values
+    printf("Debug: r1=%d, c1=%d, r2=%d, c2=%d\n", r1, c1, r2, c2);
+    int a[20][20],b[20][20],c[20][20];
+    if(c1==r2)
     {
-        for(int j=0;j<2;j++)
-        {
-            printf("c[%d][%d]= %d ",i,j,c[i][j]);
-        }
-        printf("\n");
+        printf("enter elements of array1\n");
+        input(a,r1,c1);
+        printf("enter elements of array2\n");
+        input(b,r2,c2);
+        printf("elements of array1\n");
+        output(a,r1,c1);
+        printf("elements of array2\n");
+        output(b,r2,c2);
+        multiplication(a,r1,c1,b,r2,c2,c);
+        printf("elements of resultant array is \n");
+        output(c,r1,c2);
+    }
+    else
+    {
+        printf("Multiplication is not possible\n");
     }
 }

@@ -1,0 +1,34 @@
+/* C Program to Copy All the Elements of One Array to Another Array */
+#include<stdio.h>
+#include<stdlib.h>
+void output(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+      printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
+int main()
+{
+    int n1;
+    printf("enter the number of elements to be stored in the first array\n");
+    scanf("%d",&n1);
+    int arr[n1];
+    int b[n1];
+    printf("enter array 1 elements\n");
+    for(int i=0;i<n1;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+ //  printf("Second array with elements of 1st array is\n");
+    for(int i=0;i<n1;i++)
+    {
+       b[i] =  arr[i]; 
+    }
+    printf("elements of 1st array are\n");
+    output(arr,n1);
+    printf("elements of 2nd array are\n");
+    output(b,n1);
+    
+}

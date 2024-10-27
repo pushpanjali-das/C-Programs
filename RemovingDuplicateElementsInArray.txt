@@ -1,0 +1,45 @@
+/* Removing duplicate elements of an array */
+#include<stdio.h>
+void output(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+}
+int removeduplicates(int arr[],int size,int res[])
+{
+    int j=0,isduplicate=0;
+    for(int i=0;i<size;i++)
+    {
+        isduplicate=0;
+        for(int k=0;k<i;k++)
+        {
+            if(arr[i]==arr[k])
+            {
+                isduplicate=1;
+                break;
+            }
+        }
+        if(isduplicate==0)
+            {
+                res[j]=arr[i]; // OR we can directly print arr[i] value instead of using another array res[] 
+                j++;
+            }
+    }
+    return j;
+}
+int main()
+{
+    int arr[]={425,6,6,34,189,27,34,5,5,958,2,27,425};
+    int res[50];
+    int size = sizeof(arr)/sizeof(int);
+    int size2=0;
+    printf("array before removing duplicate elements is \n");
+    output(arr,size);
+    size2 = removeduplicates(arr,size,res);
+    printf("\nArray after removing duplicate elements is\n");
+    output(res,size2);
+    
+    
+}

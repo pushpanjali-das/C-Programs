@@ -1,0 +1,50 @@
+/* C Program to Find Common Array Elements Between Two Arrays */
+#include<stdio.h>
+void input(int arr[],int num)
+{
+    for(int i=0;i<num;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+}
+int commonElements(int a[],int n1,int b[],int n2,int res[])
+{
+    int k=0;
+    for(int i=0;i<n1;i++)
+    {
+        for(int j=0;j<n2;j++)
+        {
+            if(a[i]==b[j])
+            {
+                res[k] = a[i]; 
+                k++;
+                break;
+            }
+        }
+    }
+    return k;
+}
+void output(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+}
+int main()
+{
+    int n1,n2,n3;
+    printf("Enter number elements to be stored in 1st and 2nd array respectively\n");
+    scanf("%d%d",&n1,&n2);
+    int a[n1];
+    int b[n2];
+    int res[n3];
+    printf("enter array 1 elements\n");
+    input(a,n1);
+    printf("enter array 2 elements\n");
+    input(b,n2);
+    n3 = commonElements(a,n1,b,n2,res);
+    printf("Common elements of both the arrays are\n");
+    output(res,n3);
+    
+}

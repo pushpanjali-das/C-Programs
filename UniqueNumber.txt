@@ -1,0 +1,29 @@
+/* Unique Number 
+   It is a number, when the number is reversed and then multiplied by 9
+   gives the original number as a result.
+*/
+#include<stdio.h>
+int main()
+{
+    int r,n1,n2,temp,newNum=0;
+    printf("Enter the range\n");
+    scanf("%d%d",&n1,&n2);
+    while(n1<=n2)
+    {
+        temp=n1;
+        while(n1>0)
+        {
+            r=n1%10;
+            newNum=newNum*10+r;
+            n1=n1/10;
+        }
+        if(newNum*9==temp)
+        {
+            printf("%d\n",temp);
+        }
+        newNum=0;
+        temp=temp+1;
+        n1=temp;
+    }
+    return 0;
+}

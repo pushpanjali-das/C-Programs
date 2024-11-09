@@ -1,0 +1,27 @@
+/* Prime numbers between given range of numbers */
+#include<stdio.h>
+int main()
+{
+    int a,b,i,count;
+    printf("enter the range\n");
+    scanf("%d%d",&a,&b);
+    while(a<=b)
+    {
+        count=0;
+        i=1;
+        while(i<=a)
+        {
+            if(a%i==0)
+            {
+                count++;
+            }
+            i++;
+        }
+        if(count==2)
+        {
+            printf("%d\t",a);
+        }
+        a++;
+    }
+    return 0;
+}

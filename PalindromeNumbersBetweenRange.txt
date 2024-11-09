@@ -1,0 +1,24 @@
+/* Print palindrome numbers between the range */
+#include<stdio.h>
+int main()
+{
+    int n1,n2,temp,r,newnum;
+    printf("enter the range\n");
+    scanf("%d%d",&n1,&n2);
+    while(n1<=n2)
+    {
+        temp=n1;
+        newnum=0;
+        while(temp>0)
+        {
+            r=temp%10;
+            newnum=(newnum*10)+r;
+            temp=temp/10;
+        }
+        if(newnum==n1)
+        {
+            printf("%d\t",n1);
+        }
+        n1++;
+    }
+}

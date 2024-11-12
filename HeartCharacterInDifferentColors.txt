@@ -1,0 +1,23 @@
+/* Program to print heart character with different colors randomly */
+#include<stdio.h>
+#include<conio.h>//textcolor(),cprintf(),gotoxy(),kbhit()
+#include<dos.h>//delay(),sound(),nosound()
+#include<stdli.b>//random()
+
+int main()
+{
+    int r,c,frequency=600;
+    clrscr();
+    do
+    {
+        r=random(25);
+        c=random(80);
+        gotoxy(c,r);
+        sound(k);
+        cprintf("%c ",3);
+        k=k+50;
+        delay(1);
+        nosound();
+    }while(!kbhit());
+    return 0;
+}

@@ -1,0 +1,63 @@
+/* C Program to Add Two Square Matrices 
+    Array Addition is possible, Only when both the matrices have same dimensions i.e, same number of rows and columns.
+*/
+#include<stdio.h>
+void input(int arr[20][20],int r,int c)
+{
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+}
+void summation(int arr[20][20],int brr[20][20],int r,int c,int sum[20][20])
+{
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            sum[i][j]=arr[i][j]+brr[i][j];    
+        }
+    }
+}
+void output(int arr[20][20],int r,int c)
+{
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main()
+{
+    int r1,c1,r2,c2;
+    label:
+    printf("Enter row and column values of 1 array first then for 2nd array\n");
+    scanf("%d%d%d%d",&r1,&c1,&r2,&c2);
+    if((r1==r2)||(c1==c2))
+    {
+        int arr[r1][c1],brr[r1][c1],sum[r1][c1];
+        printf("Enter array 1 elements\n");
+        input(arr,r1,c1);
+        printf("Enter array 2 elements\n");
+        input(brr,r1,c1);
+        summation(arr,brr,r1,c1,sum);
+        printf("Array 1 is\n");
+        output(arr,r1,c1);
+        printf("Array 2 is\n");
+        output(brr,r1,c1);
+        printf("Addition is\n");
+        output(sum,r1,c1);
+    }
+    else
+    {
+        printf("Array addition is not possible. Enter correct values\n");
+        goto label;
+    }
+    return 0;
+}

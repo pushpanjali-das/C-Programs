@@ -1,0 +1,42 @@
+/* Rotating An Array */
+#include<stdio.h>
+void input(int arr[],int size,int res[])
+{
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+        res[i]=0;
+    }
+}
+void rotation(int arr[],int size,int res[],int r)
+{
+    for(int i=0;i<size;i++)
+    {
+        res[i]=arr[(i+r)%size];
+    }
+}
+void output(int *res,int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        printf("%d ",*(res+i));
+    }
+}
+int main()
+{
+    int size;
+    printf("Enter the size\n");
+    scanf("%d",&size);
+    int arr[size],res[size];
+    int r;
+    printf("Enter the rotation value\n");
+    scanf("%d",&r);
+    printf("Enter array elements\n");
+    input(arr,size,res);
+    rotation(arr,size,res,r);
+    printf("Array before rotation is\n");
+    output(arr,size);
+    printf("\nArray after rotation is\n");
+    output(res,size);
+    return 0;
+}

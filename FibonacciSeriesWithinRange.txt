@@ -1,0 +1,27 @@
+/* Program to generate fibonacci series within a given range */
+#include<stdio.h>
+int main()
+{
+    int n1,n2,a=0,b=1,c;
+    printf("Enter the range\n");
+    scanf("%d%d",&n1,&n2);
+    if(n1==0)
+    {
+        printf("%d %d ",a,b);
+    }
+    else if(n1==1)
+    {
+        printf("%d ",b);
+    }
+    do
+    {
+        c=a+b;
+        if((c>=n1)&&(c<=n2))
+        {
+            printf("%d ",c);
+        }
+        a=b;
+        b=c;
+    }while(c<=n2);
+    return 0;
+}

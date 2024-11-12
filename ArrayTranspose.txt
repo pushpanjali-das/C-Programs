@@ -1,0 +1,61 @@
+/* Transpose of An Array
+    a[2][3]= 1 2 3
+             4 5 6
+             
+             
+    res[3][2]= 1 4
+               2 5
+               3 6
+*/
+
+#include<stdio.h>
+#define R 20
+#define C 20
+void input(int arr[R][C],int r,int c)
+{
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+}
+void transpose(int arr[R][C],int res[C][R],int r,int c)
+{
+    for(int i=0;i<c;i++)
+    {
+        for(int j=0;j<r;j++)
+        {
+           
+            res[i][j]=arr[j][i];
+        }
+    }
+}
+void output(int res[C][R],int r,int c)
+{
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            printf("%d ",res[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main()
+{
+    int r,c;
+    printf("Enter number of rows and columns of the array\n");
+    scanf("%d%d",&r,&c);
+    int arr[R][C];
+    int res[C][R];
+    printf("Enter array elements\n");
+    input(arr,r,c);
+    transpose(arr,res,r,c);
+    printf("Array before transpose is\n");
+    output(arr,r,c);
+    printf("Array after transpose is\n");
+    output(res,c,r);
+    return 0;
+}

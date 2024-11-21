@@ -1,0 +1,26 @@
+/* Program to find sum of all,even and odd elements of an array */
+#include<stdio.h>
+int main()
+{
+    int arr[10],n,i,sum=0,sume=0,sumo=0;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter value of arr[%d]\n",i);
+        scanf("%d",&arr[i]);
+        sum=sum+arr[i];
+        if(arr[i]%2==0)
+        {
+            sume=sume+arr[i];
+        }
+        else
+        {
+            sumo=sumo+arr[i];
+        }
+    }
+    printf("Sum of all elements is %d\n",sum);
+    printf("Sum of even elements is %d\n",sume);
+    printf("Sum of odd elements is %d",sumo);
+    return 0;
+}

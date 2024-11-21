@@ -1,0 +1,25 @@
+/* Program to print all the elements of the array in the reverse order (Do not swap or interchange the values inside the array, just need to print in the reverse order)*/
+
+#include<stdio.h>
+int main()
+{
+    int arr[10],n,i;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the value of arr[%d]\n",i);
+        scanf("%d",&arr[i]);
+    }
+    printf("Given array is\n");
+    for(i=0;i<n;i++)
+    {
+        printf("arr[%d]=%d\n",i,arr[i]);
+    }
+    printf("Array in reverse order is\n");
+    for(i=n-1;i>=0;i--)
+    {
+        printf("arr[%d]=%d\n",i,arr[i]);
+    }
+    return 0;
+}

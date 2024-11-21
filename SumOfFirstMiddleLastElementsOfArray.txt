@@ -1,0 +1,19 @@
+/* Program to add first, middle and last elements of the given array 
+
+    ****--> Middle index = n/2;
+
+*/
+#include<stdio.h>
+int main()
+{
+    int arr[10],n,i;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter value of arr[%d]\n",i);
+        scanf("%d",&arr[i]);
+    }
+    printf("Sum of first, middle and last elements of the array is %d",arr[0]+arr[n/2]+arr[n-1]); 
+    return 0;
+}

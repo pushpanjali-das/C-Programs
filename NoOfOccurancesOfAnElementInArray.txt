@@ -1,0 +1,25 @@
+/* Program to count the number of occurances of the given element in the given array*/
+#include<stdio.h>
+int main()
+{
+    int arr[10],i,n,se,found,count=0;
+    printf("Enter the number of variables to be needed\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter value of arr[%d]\n",i);
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the search element\n");
+    scanf("%d",&se);
+    for(i=0;i<n;i++)
+    {
+        if(se==arr[i])
+        {
+            count++;
+            printf("Element is found at the index %d\n",i);
+        }
+    }
+    printf("Element found %d times in the array",count);
+    return 0;
+}

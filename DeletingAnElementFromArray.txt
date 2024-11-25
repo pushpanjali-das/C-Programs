@@ -1,0 +1,33 @@
+/* Deleting an element from the array as per the index number provided */
+
+#include<stdio.h>
+
+int main()
+{
+    int arr[10],n,i,pos;
+    printf("Enter number of variables to be used\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter value of arr[%d]\n",i);
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter position number where you want to insert the new element\n");
+    scanf("%d",&pos);
+    printf("Array before inserting the new value\n");
+    for(i=0;i<n;i++)
+    {
+        printf("arr[%d]=%d\n",i,arr[i]);
+    }
+    for(i=pos;i<n;i++)
+    {
+        arr[i]=arr[i+1];
+    }
+    n--;
+    printf("Array after deleting the element\n");
+    for(i=0;i<n;i++)
+    {
+        printf("arr[%d]=%d\n",i,arr[i]);
+    }
+    return 0;
+}

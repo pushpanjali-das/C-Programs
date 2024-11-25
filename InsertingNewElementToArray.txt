@@ -1,0 +1,35 @@
+/* Inserting a new element to the array as per the index number provided */
+
+#include<stdio.h>
+
+int main()
+{
+    int arr[10],n,i,pos,ne;
+    printf("Enter number of variables to be used\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter value of arr[%d]\n",i);
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter position number where you want to insert the new element\n");
+    scanf("%d",&pos);
+    printf("Enter the new element\n");
+    scanf("%d",&ne);
+    printf("Array before inserting the new value\n");
+    for(i=0;i<n;i++)
+    {
+        printf("arr[%d]=%d\n",i,arr[i]);
+    }
+    n++;
+    for(i=n-1;i>pos;i--)
+    {
+        arr[i]=arr[i-1];
+    }
+    arr[pos]=ne;
+    printf("Array after inserting new element\n");
+    for(i=0;i<n;i++)
+    {
+        printf("arr[%d]=%d\n",i,arr[i]);
+    }
+}

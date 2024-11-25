@@ -1,0 +1,36 @@
+/* Linear Search: Searching for the given element in the array until the element is found. 
+    Model-2
+*/
+
+#include<stdio.h>
+
+int main()
+{
+    int arr[10],i,n,se,found=0;
+    printf("Enter number of variables to be used\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter value of arr[%d]\n",i);
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the searching element\n");
+    scanf("%d",&se);
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]==se)
+        {
+            found=1;
+            break;
+        }
+    }
+    if(found==1)
+    {
+        printf("Element found at index %d",i);
+    }
+    else
+    {
+        printf("Element not found");
+    }
+    return 0;
+}

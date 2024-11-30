@@ -1,0 +1,65 @@
+/* Program to check the given matrix is skew-symmetric or not.
+
+    Condition: A = -A transpose
+    a(2*2) =  0     -1
+              1      0
+              
+    b(2*2) =  0      -1
+              1       0
+            
+    i.e., When transpose matrix is multiplied by -1, result should be equal to the original matrix.          
+*/
+#include<stdio.h>
+int main()
+{
+    int a[5][5],i,j,m,n,b[5][5],flag=1;
+    printf("Enter number of rows and columns\n");
+    scanf("%d%d",&m,&n);
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("Enter value of a[%d][%d]\n",i,j);
+            scanf("%d",&a[i][j]);
+            b[j][i]=a[i][j];
+        }
+    }
+    printf("Given matrix\n");
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    printf("-Transpose matrix\n");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            printf("%d ",b[i][j]*-1);
+        }
+        printf("\n");
+    }
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(a[i][j]!=-b[i][j])
+            {
+                flag=0;
+                break;
+            }
+        }
+    }
+    if(flag==1)
+    {
+        printf("Skew-symmetric matrix");
+    }
+    else
+    {
+        printf("Not Skew-symmetric matrix");
+    }
+    return 0;
+}

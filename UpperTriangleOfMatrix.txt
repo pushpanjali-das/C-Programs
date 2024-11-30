@@ -1,0 +1,53 @@
+/* Program to print the upper triangle of the given n*n matrix.
+
+    1   2   3
+    4   5   6
+    7   8   9
+    
+Upper triangle:
+        2   3               2(0,1)      3(0,2)
+            6                           6(1,2)
+
+i.e., Elements above the principle diagonal  */
+
+#include<stdio.h>
+int main()
+{
+    int arr[5][5],i,j,n;
+    printf("Enter the number of rows and columns\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("Enter value of arr[%d][%d]\n",i,j);
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    printf("Given matrix\n");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+    printf("Upper triangle\n");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(i<j)
+            {
+                printf("%d ",arr[i][j]);
+            }
+            else
+            {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}

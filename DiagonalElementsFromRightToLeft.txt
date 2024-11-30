@@ -1,0 +1,41 @@
+/* Program to print diagonal elements from left to right (Square matrix only).
+    
+    1  2  3
+    4  5  6
+    7  8  9
+Output should be:
+          3             3(0,2)
+       5                5(1,1)
+    7                   7(2,0)
+*/
+#include<stdio.h>
+int main()
+{
+    int arr[5][5],i,j,n;
+    printf("Enter number of rowsa nd columns\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("Enter value of arr[%d][%d]\n",i,j);
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(i+j==n-1)
+            {
+                printf("%d ",arr[i][j]);
+            }
+            else
+            {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}

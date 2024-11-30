@@ -1,0 +1,36 @@
+/* Program to copy the given m*n matrix */
+#include<stdio.h>
+int main()
+{
+    int a[5][5],i,j,m,n,b[5][5];
+    printf("Enter rows and columns\n");
+    scanf("%d%d",&m,&n);
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("Enter value of arr[%d][%d]\n",i,j);
+            scanf("%d",&a[i][j]);
+            b[i][j]=a[i][j];
+        }
+    }
+    printf("Matrix-A\n");
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    printf("Matrix-B\n");
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("%d ",b[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}

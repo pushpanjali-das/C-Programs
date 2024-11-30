@@ -1,0 +1,48 @@
+/* Program to find Trance of the given matrix also print the principle diagonal elements.
+    Trace = sum of all principle diagonal elements 
+    SHOULD BE A SQAURE MATRIX ONLY i.e., r=c;
+    
+        1  2  3
+        4  5  6
+        7  8  9
+    Output should be:
+        1     	                1(0,0)			
+          5                     5(1,1)
+            9                   9(2,2)
+        Trace is 15        
+    
+    */
+
+#include<stdio.h>
+int main()
+{
+    int arr[5][5],i,j,n,trace=0;
+    printf("Enter number of rows and columns of the array\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("Enter value of arr[%d][%d]\n",i,j);
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(i==j)
+            {
+                printf("%d ",arr[i][j]);
+                trace=trace+arr[i][j];
+            }
+            else
+            {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    printf("Trace is %d",trace);
+    return 0;
+}

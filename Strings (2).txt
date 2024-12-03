@@ -1,0 +1,32 @@
+/* 1). String is a collection of chacaters which ends with the null character '\0' and this character can not be seen on the screen but compiler will keep this at the end of string.
+    
+    2).If string length is 5. Only 4 characters should be given because '\0' also needs to put.
+    
+        char x[5] = {'r','a','m','a','\0'};
+        
+    3).If we input 5 charcaters, garbage values will also be printed on the screen.    
+    
+    ****4).Strings can not be assigned (or) copied into another string. That's why we will use functions present in the string.h header file. (strcpy(),strncpy())
+    
+        str2 = str1  (Not allowed)
+        
+*/    
+
+#include<stdio.h>
+#include<string.h>   //This header file works on programiz online-compiler
+int main()
+{
+    char c[20],d[20],e[20];
+    int n;
+    printf("Enter the string\n");
+    scanf("%[^\n]",&c);
+    printf("Enter number of characters to be copied\n");
+    scanf("%d",&n);
+    e[n]='\0';
+   // strncpy(e,c,n);
+    strcpy(d,c);
+    printf("Given string is %s\n",c);
+    printf("copied string is %s\n",d);
+    printf("String copied till %d positions is %s\n",n,strncpy(e,c,n));
+    return 0;
+}

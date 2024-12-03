@@ -1,0 +1,33 @@
+/* Program to read and print the charcater array 
+
+    Character array is difficult to use as we need to enter all the
+    data character by character.
+    And it does not end with any null character '\0'like String 
+*/     
+#include<stdio.h>
+int main()
+{
+    char a[20];
+    char c[5]={'a','b','c','d','e'};
+    int i,n;
+    printf("Enter number of charcaters to be used\n");
+    scanf("%d",&n);
+   // printf("Enter the charcater array\n");
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the value of a[%d]\n",i);
+        scanf(" %c",&a[i]);
+    }
+    printf("Given character array is\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%c",a[i]);
+    }
+    printf("\n");
+     printf("Given c character array is\n");
+    for(i=0;i<5;i++)
+    {
+        printf("%c",c[i]);
+    }
+    return 0;
+}

@@ -1,0 +1,38 @@
+/* Program to print the given input as below
+    Anjali
+    
+    A
+    An
+    Anj
+    Anja
+    Anjal
+    Anjali
+    Anjal
+    Anja
+    Anj
+    An
+    A
+*/
+
+#include<stdio.h>
+int main()
+{
+    char s[40];
+    int l=0,i=0,j=0;
+    printf("Enter the string\n");
+    scanf("%[^\n]",&s);
+    while(s[l]!='\0')
+    {
+        l++;
+    }
+    printf("Length of the string is %d\n",l);
+    for(i=1;i<=l;i++)
+    {
+        printf("%-5.*s\n",i,s); //.* indicates the precision of the string Ex: %.2f , %-5.*s is the format specifier
+    }
+    for(j=l-1;j>=1;j--)
+    {
+        printf("%-5.*s\n",j,s);
+    }
+    return 0;
+}

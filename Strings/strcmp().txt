@@ -1,0 +1,83 @@
+/* Program to
+    1.Compare 2 strings
+    2.compare 2 strings irrespective of their case
+    (stricmp() does not work in programiz complier)
+    
+    ***************************************************
+    While comparing, the ASCII code of the first charcater of both the
+    strings are checked, whose ever ASCII code is bigger, that string 
+    will be big.
+    
+    If 1st charcaters are same then next characters are checked.
+    
+    There are 3 outcomes.
+    Case-1: Positive number
+    1st string is big
+    
+    Case-2: Negative number
+    2nd string is big
+    
+    Case-3: 0
+    Both are equal.
+    
+    Example-1:  -ve o/p i.e., -1
+    s2 is big bcoz,p- has higher ascii than P
+    s1: Pushpa
+    s2: pushpa
+    
+    Example-2:  +v1 o/p i.e., +1          
+    s1 is big bcoz, 2- has higher ascii than 1 
+    s1: pushpa2
+    s2: pushpa1
+    
+    Example-3: 0  
+    Both are same
+    s1:sita
+    s2:sita
+*/
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char x[40],y[40];
+    int res;
+    printf("Enter both the strings\n");
+    scanf("%[^\n] %[^\n]",&x,&y);
+    res=strcmp(x,y);
+    printf("Res is %d\n",res);
+    if(res>0)
+    {
+        printf("First string %s is big",x);
+    }
+    else if(res<0)
+    {
+        printf("Second string %s is big",y);
+    }
+    else
+    {
+        printf("Both are equal");
+    }
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

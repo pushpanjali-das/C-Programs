@@ -1,0 +1,25 @@
+/* Program to concatenate (or) join (or) combine 2 strings */
+#include<stdio.h>
+int main()
+{
+    char x[40],y[40];
+    int i=0,j=0,n;
+    printf("Enter both the strings\n");
+    scanf("%[^\n] %[^\n]",&x,&y);
+    printf("Enter the number charcaters to be concatenated from the 2nd string\n");
+    scanf("%d",&n);
+    while(x[i]!='\0')
+    {
+        i++;
+    }
+    while(y[j]!='\0' && j<n)
+    {
+        x[i]=y[j];
+        i++;
+        j++;
+    }
+    x[i]='\0';
+    printf("First string after concatenation is %s\n",x);
+    printf("Second string is %s",y);
+    return 0;
+}

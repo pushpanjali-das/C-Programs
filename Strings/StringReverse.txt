@@ -1,0 +1,35 @@
+/* Program to reverse a string */
+
+#include<stdio.h>
+int main()
+{
+    char x[40],temp;
+    int i=0,j=0;
+    printf("Enter the string\n");
+    scanf("%[^\n]",&x);
+
+    while(x[j]!='\0')   
+    {
+        j++;                
+    }
+    j--;
+    
+/*    i<j for Even no.of characters
+     a n j a l i \0
+     0 1 2 3 4 5 6
+                                  
+    i==j for Odd no.of characters 
+    r e f e r \0
+    0 1 2 3 4  5
+ */   
+    while(i<=j)            
+    {                                   
+        temp=x[i];      
+        x[i]=x[j];      
+        x[j]=temp;      
+        i++;            
+        j--;            
+    }
+    printf("New string is %s",x);
+    return 0;
+}

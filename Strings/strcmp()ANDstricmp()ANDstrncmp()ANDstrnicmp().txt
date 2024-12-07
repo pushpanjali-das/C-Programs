@@ -1,9 +1,14 @@
-/* Program to
-    1.Compare 2 strings
-    2.compare 2 strings irrespective of their case
-    (stricmp() does not work in programiz complier)
-    
-    ***************************************************
+/* Program to  (These functions do not work in programiz online compiler)
+
+    1.Compare 2 strings  										strcmp()
+
+    2.compare 2 strings irrespective of their case  							strncmp()
+
+    3.Compare 2 strings irrespective of their case							stricmp()
+
+    4.Compare 2 strings irrespective of their case upto "n" number of charcaters			strnicmp()
+   
+    *****************************************************************************************************
     While comparing, the ASCII code of the first charcater of both the
     strings are checked, whose ever ASCII code is bigger, that string 
     will be big.

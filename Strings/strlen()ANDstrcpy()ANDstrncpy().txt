@@ -21,5 +21,6 @@ int main()
     printf("Enter the number of characters to be copied\n");
     scanf("%d",&n);
     strncpy(copy1,s,n);
+    copy1[n]='\0';
     printf("String copied till %d charcaters is %s\n",n,copy1);
 }

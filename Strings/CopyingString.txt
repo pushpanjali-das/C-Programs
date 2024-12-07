@@ -1,0 +1,27 @@
+/* Program to copy a string into another string
+
+   As we can not a string into another string directly, we have to do it character by character. Also null character '\0' at the end of the final string is mandatory as            a string should end with '\0'. 
+
+ */
+#include<stdio.h>
+int main()
+{
+    char x[40],y[40];
+    int i=0,j=0;
+    printf("Enter both the strings\n");
+    scanf("%[^\n] %[^\n]",&x,&y);     
+    while(x[i]!='\0')                                     
+    {
+        i++;
+    }
+    while(y[j]!='\0')           
+    {
+        x[i]=y[j];              
+        i++;
+        j++;
+    }
+    x[i]='\0';
+    printf("Final first string is %s\n",x);
+    printf("Second string is %s",y);
+    return 0;
+}

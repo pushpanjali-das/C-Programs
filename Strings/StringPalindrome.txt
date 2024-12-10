@@ -1,38 +1,53 @@
-/* Program to check the given string is palindrome or not */
+/* Program to check given string is palindrome or not
+
+Example-1: For Even number of charcaters
+
+            n o o n \0
+            0 1 2 3  4
+            
+Here we need to swap all the charcaters that are available until i<j.Once condition becomes false, value of i will be greater than the j(i>j).
+i>j condition has to be mentioned in the palindrome checking condtion.
+
+
+Example-2: For Odd number of charcaters
+           
+           r e f e r \0
+           0 1 2 3 4 5
+
+Here we don't need to swap or interchange or check the middle character as there is no more corresponding character for it.
+Untill i<j becomes true we need to check, once the condition becomes false, i will be equal to j (i==j). (2==2)
+This we have mentioned in the palindrome checking condtion.
+
+*/
 #include<stdio.h>
 int main()
 {
-    char x[40],y[40];
-    int i,j,l=0;
+    char x[40];
+    int i=0,j=0;
     printf("Enter the string\n");
     scanf("%[^\n]",&x);
-    while(x[l]!='\0')
+    while(x[j]!='\0')
     {
-        l++;
+        j++;
     }
-    for(i=0,j=l-1;i<=l-1,j>=0;i++,j--)
+    j--;
+     while(i<j)                      
     {
-        y[i]=x[j];
-    }
-    i=0;
-    while(i<l)
-    {
-        if(x[i]!=y[i])
+        if(x[i]!=x[j])              
         {
             break;
         }
-        else
-        {
-            i++;
-        }
+        i++;
+        j--;
     }
-    if(i==l)
+    printf("i=%d\nj=%d\n",i,j);
+    if(i>=j)
     {
-        printf("%s is palindrome",x);
+        printf("Palindrome");
     }
     else
     {
-        printf("%s is not palindrome",x);
+        printf("Not palindrome");
     }
     return 0;
 }

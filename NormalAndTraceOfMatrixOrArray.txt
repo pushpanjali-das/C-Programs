@@ -1,0 +1,36 @@
+/* Program to find Normal of the given matrix
+Input: 1  2  3
+       4  5  6
+       7  8  9
+Output: 
+Normal = 16
+Trace  = 15
+Normal = sqrt(1*1+ 2*2 + 3*3 + 4*4 + 5*5 + 6*6 + 7*7 + 8*8 + 9*9)
+       = 16
+Trace  = 1+5+9 (Principle diagonal elements)= 15       
+*/
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int a[5][5],i,j,r,c,normal=0,trace=0;
+    printf("Enter the number of rows and columns\n");
+    scanf("%d%d",&r,&c);
+    printf("Enter array elements\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&a[i][j]);
+            normal=normal+a[i][j]*a[i][j];
+            if(i==j)
+            {
+                trace=trace+a[i][j];
+            }
+        }
+    }
+    normal=sqrt(normal);
+    printf("Normal is %d\n",normal);
+    printf("Trace is %d\n",trace);
+    return 0;
+}

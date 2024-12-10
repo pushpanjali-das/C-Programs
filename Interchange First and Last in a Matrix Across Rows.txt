@@ -1,0 +1,65 @@
+/*C Program to Interchange Elements of First and Last rows of the given array
+Input:     6 3 1
+           4 5 2
+           2 4 9
+           
+Output:    2 4 9
+           4 5 2
+           6 3 1 
+           
+Input:     1 3 5 
+           4 5 2 
+           2 2 4 
+           
+Output:    2 2 4 
+           4 5 2 
+           1 3 5
+*/
+
+#include<stdio.h>
+void output(int a[5][5],int r,int c)
+{
+    int i,j;
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%-3d",a[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main()
+{
+    int a[5][5],r,c,i,j,temp;
+    printf("Enter the number of rows and columns\n");
+    scanf("%d%d",&r,&c);
+    printf("Enter array elements\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("Array before interchanging the elements\n");
+    output(a,r,c);
+    printf("Array after interchanging the elements\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            if(i==0)
+            {
+                temp=a[i][j];
+                a[i][j]=a[r-1][j];
+                a[r-1][j]=temp;
+                
+            }
+            printf("%-3d",a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+           

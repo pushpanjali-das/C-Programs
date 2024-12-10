@@ -1,0 +1,33 @@
+/* Find first non-repeating character of given string */
+#include<stdio.h>
+int main()
+{
+    char x[40];
+    int i,j,l=0,count=0;
+    printf("Enter the string\n");
+    scanf("%[^\n]",&x);
+    while(x[l]!='\0')
+    {
+        l++;
+    }
+    
+    
+    for(i=0;i<l;i++)
+    {
+        count=0;
+        for(j=i+1;j<l;j++)                
+        {
+            if(x[i]==x[j])              
+            {
+                count++;
+                break;
+            }
+        }
+        if(count==0)
+        {
+            printf("%c\n",x[i]);
+            break;
+        }
+    }
+    return 0;
+}

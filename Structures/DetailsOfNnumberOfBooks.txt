@@ -1,0 +1,33 @@
+/*  Program to read and print "n" number of books infromation  
+
+   Array of structure:
+   Used to input more number of records at a time.
+   Ex: struct book b[5]; 5 records
+*/   
+
+#include<stdio.h>
+struct books
+{
+    int id,nop;
+    char name[40];
+    float price;
+};
+int main()
+{
+    struct books b[10]; //For 10 records
+    int n,i;
+    printf("Enter the number of books\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the book id,name and the number of pages it has\n");
+        scanf("%d %[^\n]%d",&b[i].id,b[i].name,&b[i].nop);
+        b[i].price=b[i].nop*0.25;
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("Book id:%d   Book name:%s  Book price:%f\n",b[i].id,b[i].name,b[i].price);
+       
+    }
+    return 0;
+}

@@ -1,0 +1,53 @@
+/* Program to read Employee details and print them 
+
+    Structure: 
+    1). It is user defined datatype which is used to group different datatypes into a single unit.
+    2). Structure in c is equivalent to the class in java.
+    3). Members of the structure are stored in continuous memory locations.
+    4). Dot (.) operator is used to access the structure members.
+    
+    Ex:
+        struct emp
+        {
+            int eid;
+            char name[40];
+            float salary;
+        };
+        struct emp e;
+        
+        Here structure variable "e" is allotted with 
+        2+40+4=46 Bytes of memory
+*/
+/*
+scanf("%d %[^\n]%f",&e.eid,e.name,&e.salary);
+
+A space is provided in scanf before the control string because the
+%[^\n] reads the string along with the spaces but it stops reading
+the moment it gets a '\n' character.
+
+Here in scanf, first we are reading the id, after entering the
+id we will click on the enter button which is nothing but a '\n
+character. So %[^\n] assumes as it has already found '\n' from
+the buffer it stops reading the string.
+
+To avoid this spaces is provided before %[^\n] so that '\n' will be
+compensated with ' '.
+
+*/
+
+#include<stdio.h>
+
+struct emp
+{
+    int eid;
+    char name[40];
+    float salary;
+};
+int main()
+{
+    struct emp e;
+    printf("Enter the employee id, name and the salary\n");
+    scanf("%d %[^\n]%f",&e.eid,e.name,&e.salary);
+    printf("Employee Id:%d\nEmployee Name:%s\nEmployee Salary:%.3f",e.eid,e.name,e.salary);
+    return 0;
+}

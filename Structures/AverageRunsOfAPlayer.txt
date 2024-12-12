@@ -1,0 +1,18 @@
+/* Program to find average runs of the player based on the number of matches played*/
+#include<stdio.h>
+
+struct player
+{
+    int pid,nor,nom;
+    char pname[40];
+    float average;
+};
+int main()
+{
+    struct player p;
+    printf("Enter the player name, id, number of runs and number of matches played\n");
+    scanf("%[^\n]%d%d%d",p.pname,&p.pid,&p.nor,&p.nom);
+    p.average=p.nor/(float)p.nom;
+    printf("Average runs of the player %s is %f",p.pname,p.average);
+    return 0;
+}

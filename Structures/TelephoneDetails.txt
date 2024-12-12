@@ -1,0 +1,17 @@
+/* Program to read the telephone structure and print it */
+#include<stdio.h>
+
+struct telephone
+{
+    long int tno;
+    char cname[40];
+    float bill;
+};
+int main()
+{
+    struct telephone t;
+    printf("Enter the telephone number, customer name and the bill\n");
+    scanf("%ld %[^\n]%f",&t.tno,t.cname,&t.bill);
+    printf("Telephone number:%ld\nCustomer name:%s\nBill:%.2f",t.tno,t.cname,t.bill);
+    return 0;
+}

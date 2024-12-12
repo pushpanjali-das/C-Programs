@@ -1,0 +1,30 @@
+/* Sorting the given string */
+#include<stdio.h>
+
+int main()
+{
+    char x[40],temp;
+    int l=0,i,j;
+    printf("Enter the string\n");
+    scanf("%[^\n]",x);
+    while(x[l]!='\0')
+    {
+        l++;
+    }
+    printf("String before sorting is %s\n",x);
+    printf("Length of %s is %d\n",x,l);
+    for(i=0;i<l-1;i++)
+    {
+        for(j=0;j<l-i-1;j++)
+        {
+            if(x[j]>x[j+1])
+            {
+                temp=x[j];
+                x[j]=x[j+1];
+                x[j+1]=temp;
+            }
+        }
+    }
+    
+    printf("String after sorting is %s",x);
+}

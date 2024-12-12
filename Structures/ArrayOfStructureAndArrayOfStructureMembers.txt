@@ -1,0 +1,60 @@
+/* Array of structure and Array of structure members*/
+#include<stdio.h>
+#include<string.h>
+struct student
+{
+    int no,m[5],tot;
+    char name[40],grade[20];
+    float average;
+};
+int main()
+{
+    struct student s[10];
+    int i,n,j,k;
+    printf("Enter the number of students\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the number and name of the student %d\n",i+1);
+        scanf("%d %[^\n]",&s[i].no,s[i].name);
+        s[i].tot=0;
+        for(j=0;j<3;j++)
+        {
+            printf("Enter the marks in subject %d\n",j+1);
+            scanf("%d",&s[i].m[j]);
+            s[i].tot=s[i].tot+s[i].m[j];
+        }
+        s[i].average=s[i].tot/3.0;
+        for(j=0;j<3;j++)
+        {
+            if(s[i].m[j]!=35 && s[i].m[j]<35)
+            {
+                break;
+            }
+        }
+        if(j==3)
+        {
+            if(s[i].average>=60)
+            {
+                strcpy(s[i].grade,"First grade");
+            }
+            else if(s[i].average>=50 && s[i].average<60)
+            {
+                strcpy(s[i].grade,"Second grade");
+            }
+            else
+            {
+                strcpy(s[i].grade,"Third grade");
+            }
+        }
+        else
+        {
+            strcpy(s[i].grade,"No grade");
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("Details of student%d:\n%d %s %d  %s\n",i+1,s[i].no,s[i].name,s[i].tot,s[i].grade);
+    }
+    return 0;
+}

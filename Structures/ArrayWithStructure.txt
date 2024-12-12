@@ -1,0 +1,39 @@
+/* Program to read the marks of a student obtained in 3 subjects and find the total marks then print them.
+
+    Array of structure members
+    Array with structure:
+    Here we will store the marks obtained in 3 subjects in an array.
+    Ex: int m[3];
+*/
+
+#include<stdio.h>
+
+struct student
+{
+    int no,m[3],tot;
+    char name[40];
+};
+int main()
+{
+    struct student s;
+    int i;
+    printf("Enter the student number and name\n");
+    scanf("%d %[^\n]",&s.no,&s.name);
+    s.tot=0;							//s.tot can not be initialized inside the structure
+/* 
+    Elements are stored in this way
+   
+    10   80   90    100 270   abcd
+    no  m[0]  m[1]  m[2] tot  name
+    
+ */  
+    
+    for(i=0;i<3;i++)
+    {
+        printf("Enter marks in subject %d\n",i+1);
+        scanf("%d",&s.m[i]);
+        s.tot=s.tot+s.m[i];
+    }
+    printf("Student number:%d Student name:%s Student total:%d",s.no,s.name,s.tot);
+    return 0;
+}

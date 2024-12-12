@@ -1,0 +1,46 @@
+/* Program to read the student id, name and marks in 3 subjects and to find the total, average and grade of a student
+
+        Average                         Grade
+        >=60                            First
+        >=50 and <60                    Second
+        >=35 and <50                    Third
+        <35                             No grade
+*/
+
+#include<stdio.h>
+#include<string.h>
+struct student
+{
+    int sid,tot,m1,m2,m3;
+    char name[40],grade[20];
+    float average;
+};
+int main()
+{
+    struct student s;
+    printf("Enter the student id,name and the marks in 3 subjects\n");
+    scanf("%d %[^\n]%d%d%d",&s.sid,s.name,&s.m1,&s.m2,&s.m3);
+    s.tot=s.m1+s.m2+s.m3;
+    s.average=s.tot/3.0;
+    if(s.m1>=35 && s.m2>=35 && s.m3>=35)
+    {
+        if(s.average>=60)
+        {
+            strcpy(s.grade,"First grade");
+        }
+        else if(s.average>=50 && s.average<60)
+        {
+            strcpy(s.grade,"Second grade");
+        }
+        else
+        {
+            strcpy(s.grade,"Third grade");
+        }
+    }
+    else
+    {
+        strcpy(s.grade,"No grade");
+    }
+    printf("Student name:%s\nStudent id:%d\nStudent total:%d\nStudent Average:%f\nStudent grade:%s",s.name,s.sid,s.tot,s.average,s.grade);
+    return 0;
+}

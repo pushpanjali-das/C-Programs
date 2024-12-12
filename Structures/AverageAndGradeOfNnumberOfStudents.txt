@@ -1,0 +1,56 @@
+/*Program to obtain average and grade of "n" number of students
+
+        Average                         Grade
+        >=60                            First
+        >=50 and <60                    Second
+        >=35 and <50                    Third
+        <35                             No grade
+        
+*/
+#include<stdio.h>
+#include<string.h>
+
+struct student
+{
+    int id,tot,m1,m2,m3;
+    char name[40],grade[20];
+    float average;
+};
+int main()
+{
+    struct student s[10];
+    int n,i;
+    printf("Enter the number of student\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter student id, name and marks in 3 subjects\n");
+        scanf("%d %[^\n]%d%d%d",&s[i].id,s[i].name,&s[i].m1,&s[i].m2,&s[i].m3);
+        s[i].tot=s[i].m1+s[i].m2+s[i].m3;
+        s[i].average=s[i].tot/3.0;
+        if(s[i].m1>=35 && s[i].m2>=35 && s[i].m3>=35)
+        {
+            if(s[i].average>=60)
+            {
+                strcpy(s[i].grade,"First grade");
+            }
+            else if(s[i].average>=50 && s[i].average<60)
+            {
+                strcpy(s[i].grade,"Second grade");
+            }
+            else
+            {
+                strcpy(s[i].grade,"Third grade");
+            }
+        }
+        else
+        {
+            strcpy(s[i].grade,"No garde");
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("Student id: %d  Student name: %s  Student total: %d  Student average:%.2f  Student garde: %s\n",s[i].id,s[i].name,s[i].tot,s[i].average,s[i].grade);
+    }
+    return 0;
+}

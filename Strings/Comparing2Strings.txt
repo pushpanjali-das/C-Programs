@@ -1,0 +1,37 @@
+/* Program to compare 2 strings and findout which is greater (or) both are equal 
+
+	ASCII code of null character('\0') is 0
+
+*/
+#include<stdio.h>
+
+int main()
+{
+    char x[40],y[40];
+    int i=0;
+    printf("Enter the 2 strings\n");
+    scanf("%[^\n] %[^\n]",x,y);
+    while(x[i]!='\0' || y[i]!='\0')
+    {
+        if(x[i]==y[i])
+        {
+            i++;
+            continue;
+        }
+        else if(x[i]>y[i])
+        {
+            printf("%s is greater",x);
+            break;
+        }
+        else
+        {
+            printf("%s is greater",y);
+            break;
+        }
+    }
+    if(x[i]==y[i])
+    {
+        printf("Both are equal");
+    }
+    return 0;
+}

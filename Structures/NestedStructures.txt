@@ -1,0 +1,30 @@
+/* Nested structure (or) Structure within structure:
+
+   Nested structure helps to organize related information present in
+   a complex database.
+   
+   Making it easier to manage, retrieve, understand and use the data
+
+*/
+#include<stdio.h>
+
+struct marks                //Sub structure of student structure
+{
+    int m1,m2,m3;           //3*2=6 bytes
+};
+struct student    //4+40+6=48 bytes in total for student structure
+{
+    int sid,tot;        //2+2=4
+    char sname[40];     //40
+    struct marks m;     //6 bytes
+};
+
+int main()
+{
+    struct student s;
+    printf("Enter student id, name and marks in 3 subjects\n");
+    scanf("%d %[^\n]%d%d%d",&s.sid,s.sname,&s.m.m1,&s.m.m2,&s.m.m3);
+    s.tot=s.m.m1+s.m.m2+s.m.m3;
+    printf("Student id:%d\nStudent name:%s\nStudent total:%d",s.sid,s.sname,s.tot);
+    return 0;
+}

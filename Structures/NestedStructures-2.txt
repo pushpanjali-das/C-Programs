@@ -1,0 +1,76 @@
+/* Nested structure of Files and folders 
+
+Documents
+    Work
+        Report.docx
+        Budget.xlsx
+    Personal
+        Resume.pdf
+        Recipes.txt
+    
+Pictures
+    Vacation
+        Beach.jpg
+        Mountains.png
+    Family
+        Birthday.jpeg    
+*/
+#include<stdio.h>
+struct files
+{
+    char filename[20];
+};
+struct subfolder
+{
+    char subfoldername[20];
+    int filescount;
+    struct files f[10];
+};
+struct folder
+{
+    char foldername[20];
+    int subfoldercount;
+    struct subfolder sub[10];
+};
+int main()
+{
+    struct folder fold[10];
+    int nf,i,j,k;
+    printf("Enter the number of folders\n");
+    scanf("%d",&nf);
+    for(i=0;i<nf;i++)
+    {
+        printf("Enter the name of the folder-%d\n",i+1);
+        scanf("%s",&fold[i].foldername);
+        printf("Enter the number of subfolders in %s\n",fold[i].foldername);
+        scanf("%d",&fold[i].subfoldercount);
+        for(j=0;j<fold[i].subfoldercount;j++)
+        {
+            printf("Enter the name of subfolder-%d of %s\n",j+1,fold[i].foldername);
+            scanf("%s",&fold[i].sub[j].subfoldername);
+            printf("Enter the number of files in %s\n",fold[i].sub[j].subfoldername);
+            scanf("%d",&fold[i].sub[j].filescount);
+            for(k=0;k<fold[i].sub[j].filescount;k++)
+            {
+                printf("Enter the file name-%d of %s\n",k+1,fold[i].sub[j].subfoldername);
+                scanf("%s",&fold[i].sub[j].f[k].filename);
+            }
+        }
+    }
+    printf("Folder structure\n");
+    for(i=0;i<nf;i++)
+    {
+        printf("%d. %s\n",i+1,fold[i].foldername);
+        for(j=0;j<fold[i].subfoldercount;j++)
+        {
+            printf("\t%d.%s\n",j+1,fold[i].sub[j].subfoldername);
+            for(k=0;k<fold[i].sub[j].filescount;k++)
+            {
+                printf("\t\t%d.%s\n",k+1,fold[i].sub[j].f[k].filename);
+            }
+            printf("\n");
+        }
+        printf("\n\n");
+    }
+    return 0;
+}

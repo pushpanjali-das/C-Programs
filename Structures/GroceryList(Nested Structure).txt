@@ -1,0 +1,51 @@
+/*     Grocery List
+
+Diary        Meat        Fruits      Vegetables      
+1.Milk      1.Chicken   1.Apple     1.Potatoes
+2.Butter    2.Mutton    2.Oranges   2.Tomatoes
+3.Cheese                3.Grapes    3.Brinjals
+
+*/
+
+#include<stdio.h>
+struct items
+{
+    char itemsname[20];
+};
+struct category
+{
+    char name[20];
+    int itemscount;
+    struct items itemslist[10];
+};
+
+int main()
+{
+    struct category c[10];
+    int nc,i,j;
+    printf("Enter the number of categories available\n");
+    scanf("%d",&nc);
+    for(i=0;i<nc;i++)
+    {
+        printf("Enter the name of category %d\n",i+1);
+        scanf("%s",c[i].name);
+        printf("Enter number of items in %s\n",c[i].name);
+        scanf("%d",&c[i].itemscount);
+        for(j=0;j<c[i].itemscount;j++)
+        {
+            printf("Enter the item %d\n",j+1);
+            scanf("%s",c[i].itemslist[j].itemsname);
+        }
+    }
+    printf("******Grocery list*******\n");
+    for(i=0;i<nc;i++)
+    {
+        printf("%d.%s\n",i+1,c[i].name);
+        for(j=0;j<c[i].itemscount;j++)
+        {
+            printf("%d.%s\n",j+1,c[i].itemslist[j].itemsname);
+        }
+        printf("\n");
+    }
+    return 0;
+}

@@ -1,0 +1,21 @@
+/* Student total marks in 3 subjects */
+#include<stdio.h>
+
+struct marks
+{
+    int m1,m2,m3;
+};
+struct student
+{
+    int id,tot;
+    char name[20];
+    struct marks m;
+};
+int main()
+{
+    struct student s;
+    printf("Enter the student name, id and marks in 3 subjects\n");
+    scanf("%[^\n] %d%d%d%d",&s.name,&s.id,&s.m.m1,&s.m.m2,&s.m.m3);
+    s.tot=s.m.m1+s.m.m2+s.m.m3;
+    printf("%d %s %d\n",s.id,s.name,s.tot);
+}

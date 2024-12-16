@@ -1,0 +1,23 @@
+/* Voter's Details as an example for Nested Structures */
+
+#include<stdio.h>
+
+struct voter
+{
+    char name[20];
+    int id;
+    struct dob
+    {
+        int dd,mm,yy;
+    }d;
+};
+int main()
+{
+    struct voter v;
+    printf("Enter the name,id and date of birth(dd-mm-yy)of the voter\n");
+    scanf("%[^\n] %d%d%d%d",&v.name,&v.id,&v.d.dd,&v.d.mm,&v.d.yy);
+    printf("Voter id: %d\n",v.id);
+    printf("Voter name: %s\n",v.name);
+    printf("Voter dob: %d-%d-%d",v.d.dd,v.d.mm,v.d.yy);
+    return 0;
+}

@@ -1,0 +1,77 @@
+/*
+E-commerce Websites
+Structure: Categories > Subcategories > Products
+
+Electronics
+    Phones: 
+        iPhone
+        Samsung Galaxy
+    Laptops: 
+        MacBook
+        Dell Inspiron
+Clothing
+    Men: 
+        T-Shirts
+        Jackets
+    Women: 
+        Dresses
+        Skirts
+*/
+#include<stdio.h>
+struct items
+{
+    char itemname[20];
+};
+struct subcat
+{
+    char subcatname[20];
+    int itemscount;
+    struct items item[10];
+};
+struct ecwc
+{
+    char catname[20];
+    int subcatcount;
+    struct subcat s[10];
+};
+int main()
+{
+    struct ecwc e[5];
+    int i,j,k,nc;
+    printf("Enter the number of categories present in E-Commerce Website\n");
+    scanf("%d",&nc);
+    for(i=0;i<nc;i++)
+    {
+        printf("Enter the name of category-%d\n",i+1);
+        scanf(" %[^\n]",e[i].catname);
+        printf("Enter the number of subcategories present in %s\n",e[i].catname);
+        scanf("%d",&e[i].subcatcount);
+        for(j=0;j<e[i].subcatcount;j++)
+        {
+            printf("Enter the name of subcategory-%d of %s\n",j+1,e[i].catname);
+            scanf(" %[^\n]",e[i].s[j].subcatname);
+            printf("Enter the number of items in %s category\n",e[i].s[j].subcatname);
+            scanf("%d",&e[i].s[j].itemscount);
+            for(k=0;k<e[i].s[j].itemscount;k++)
+            {
+                printf("Enter the name of item-%d in sub category %s\n",k+1,e[i].s[j].subcatname);
+                scanf(" %[^\n]",&e[i].s[j].item[k].itemname);
+            }
+        }
+    }
+    printf("*******E-Commerce Website*********\n");
+    for(i=0;i<nc;i++)
+    {
+        printf("%d. %s\n",i+1,e[i].catname); 
+        for(j=0;j<e[i].subcatcount;j++)
+        {
+            printf("\t%d. %s\n",j+1,e[i].s[j].subcatname);
+            for(k=0;k<e[i].s[j].itemscount;k++)
+            {
+                printf("\t\t%d. %s\n",k+1,e[i].s[i].item[k].itemname);
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}

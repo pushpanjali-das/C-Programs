@@ -1,0 +1,57 @@
+/* 
+Menu
+  ├── Appetizers
+  │      ├── Spring Rolls
+  │      ├── Nachos
+  ├── Main Courses
+  │      ├── Grilled Chicken
+  │      ├── Pasta Alfredo
+  ├── Desserts
+         ├── Chocolate Cake
+         ├── Ice Cream
+         
+*/
+#include<stdio.h>
+struct items
+{
+    char itemname[20];
+};
+struct menucat
+{
+    char catname[20];
+    int itemscount;
+    struct items item[10];
+};
+
+int main()
+{
+    struct menucat c[5];
+    int i,j,nc;
+    printf("Enter the number of categories that the menu has\n");
+    scanf("%d",&nc);
+    for(i=0;i<nc;i++)
+    {
+        printf("Enter the name of category-%d\n",i+1);
+        {
+            scanf(" %[^\n]",&c[i].catname);
+            printf("Enter the number of items in %s category\n",c[i].catname);
+            scanf("%d",&c[i].itemscount);
+            for(j=0;j<c[i].itemscount;j++)
+            {
+                printf("Enter the name of item-%d of %s\n",j+1,c[i].catname);
+                scanf(" %[^\n]",c[i].item[j].itemname);
+            }
+        }
+    }
+    printf("*******Menu********\n");
+    for(i=0;i<nc;i++)
+    {
+        printf("%d. %s\n",i+1,c[i].catname);
+        for(j=0;j<c[i].itemscount;j++)
+        {
+            printf("\t%d. %s\n",j+1,c[i].item[j].itemname);
+        }
+        printf("\n");
+    }
+    return 0;
+}

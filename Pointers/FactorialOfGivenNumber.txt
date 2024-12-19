@@ -1,0 +1,17 @@
+/* Program to find factorial a given number using pointers */
+#include<stdio.h>
+int main()
+{
+    int n,*p,fact=1,temp;
+    p=&n;
+    t=&temp;
+    printf("Enter the value of n\n");           
+    scanf("%d",p);                          
+    temp=*p;                                
+    while(*p>0)                             
+    {
+        fact=fact*(*p);                     
+        (*p)--;                             
+    }
+    printf("Factorial of %d is %d",temp,fact);
+}

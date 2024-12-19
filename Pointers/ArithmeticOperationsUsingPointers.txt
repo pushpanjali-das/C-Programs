@@ -1,0 +1,25 @@
+/*Program to perfrom all arithmetic operations using pointers
+
+*************:
+    It is mandatory to use paranthesis ((*p)/(*q))for pointer variables while doing the operations or use spaces before and after the operator (*p / *q)
+    
+    If we don't do this we may get some issues.Like
+    1.*p**q , here * between the pointers will become as a double pointer of q
+    2. *p/*q, here /*q will behave like a comment 
+*/
+
+#include<stdio.h>
+int main()
+{
+    int a,b,*p,*q;
+    p=&a;
+    q=&b;
+    printf("Enter the values of a and b\n");
+    scanf("%d%d",p,q);
+    printf("Addition: %d\n",(*p)+(*q));
+    printf("Subtraction: %d\n",(*p)-(*q));
+    printf("Product: %d\n",(*p)*(*q));
+    printf("Quotient: %f\n",(float)(*p)/(*q));
+    printf("Remainder: %d\n",(*p)%(*q));
+    return 0;
+}

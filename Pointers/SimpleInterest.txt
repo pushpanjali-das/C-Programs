@@ -1,0 +1,15 @@
+/* Program to print the simple interest */
+#include<stdio.h>
+int main()
+{
+    int p,t,*pp,*tp;
+    float *rp,r,si;
+    pp=&p;
+    tp=&t;
+    rp=&r;
+    printf("Enter the value of p,t and r\n");
+    scanf("%d%d%f",pp,tp,rp);
+    si=(*pp)*(*tp)*(*rp)/100;
+    printf("Simple interest is %.2f\n",si);
+    return 0;
+}

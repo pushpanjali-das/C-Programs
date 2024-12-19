@@ -1,0 +1,33 @@
+/* Pointers 
+
+Variable Name: A symbolic identifier in the code that represents a
+               value stored somewhere in memory.
+Address of Variable: A numeric value representing the physical                       
+		     location in memory where the variable’s data is                  
+		     stored.
+Pointer variable: A variable which stores the address of a normal  
+                  variable(A variable whose value has been given
+                  through the keyboard)
+
+Size of the pointer variable depends on the OS size i.e., 
+    if OS is of 32-bit, size of pointer is 4bytes (32/8=4)
+    if OS is of 64-bit, size of pointer is 8bytes (64/8=8).
+The size of a pointer does not depend on the type of variable it points to (int, char, float, etc.).
+It only depends on the system's architecture because all pointers must be able to hold the same size memory address. 
+*/
+
+#include<stdio.h>
+int main()
+{
+    int a,*p;
+    p=&a;
+    printf("Enter the value of a\n");
+    scanf("%d",p);
+    printf("Size of a is %d bytes\nSize of pointer variable is %d bytes\n",sizeof(a),sizeof(p));
+    printf("Value of variable a using variable name (a) is %d\n",a);
+    printf("Value of variable a using pointer (*p) is %d\n",*p);
+    printf("Value of variable a in another way (*(&a)) is %d\n",*(&a));
+    printf("Address of the variable a using address operator (&a) is %u\n",&a);
+    printf("Address of the variable a using pointer (p) is %u\n",p);
+    return 0;
+}

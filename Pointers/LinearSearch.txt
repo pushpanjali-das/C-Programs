@@ -1,0 +1,33 @@
+/*Linear search */
+#include<stdio.h>
+int main()
+{
+    int a[10],n,*p,se,found=0;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    for(p=&a[0];p<&a[n];p++)
+    {
+        printf("Enter the value\n");
+        scanf("%d",p);
+    }
+    printf("Enter the element to be searched\n");
+    scanf("%d",&se);
+    for(p=a;p<&a[n];p++)
+    {
+        if(se==*p)
+        {
+            found=1;
+            break;
+        }
+    }
+    if(found==1)
+    {
+        printf("current address=%u and base address is %u\n",p,a);
+        printf("Element found at index %d",p-a);
+    }
+    else
+    {
+        printf("Element not found");
+    }
+    return 0;
+}

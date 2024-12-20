@@ -1,0 +1,20 @@
+Pointers and Arrays:
+
+1).When an array is declared the compiler allocates a base adress and sufficient amount of storage to contain all the elements of the array in continuous memory locations. The base address is the location of the first element (index 0) of the array.
+
+2).The compiler defines the array name as a CONSTANT POINTER to the first element.
+    a).It is called as CONSTANT POINTER becaues it points to a memory
+    location (index 0) which is fixed and does not change anytime.
+    
+    b).This is the reason why we can not use unary operators like ++ and -- on array name. Because array name does not allow these operators to to change it's base address.
+    
+    c).Instead we can use a separate pointer variable which will point to the base address of array and then increment or decrement it.
+        Ex: int a[5]={1,2,3,4,5},*p;
+            p=&a[0];
+            Here p++ is allowed.
+        
+3).Suppose "a" is an array and "p" is a pointer to the array "a" by the following statement
+    p=a;    (or)   p=&a[0];
+    
+4). We can access every value of array using p++ to move from one element to another.    
+    

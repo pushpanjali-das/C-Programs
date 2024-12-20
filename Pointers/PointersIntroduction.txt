@@ -13,7 +13,9 @@ Size of the pointer variable depends on the OS size i.e.,
     if OS is of 32-bit, size of pointer is 4bytes (32/8=4)
     if OS is of 64-bit, size of pointer is 8bytes (64/8=8).
 The size of a pointer does not depend on the type of variable it points to (int, char, float, etc.).
-It only depends on the system's architecture because all pointers must be able to hold the same size memory address. 
+It only depends on the system's architecture because all pointers must be able to hold the same size memory address.
+
+Incase of turbo c++ compiler, regardless of the system architecture, the size of the pointer remains 2 bytes only because tubo c++ compiler works on DOS environment which has 16 architecture. And it can access addresses upto 65536 
 */
 
 #include<stdio.h>

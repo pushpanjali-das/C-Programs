@@ -1,0 +1,31 @@
+/* Program to print perfect numbers between a range of numbers
+
+A number, where the sum of all the factors of the number excluding the number itself is equals to the actual number.
+Ex:6,28.
+
+*/
+#include<stdio.h>
+int main()
+{
+    int n1,n2,*p2,*p1,sum=0,i,j;
+    p1=&n1;
+    p2=&n2;
+    printf("Enter the range\n");
+    scanf("%d%d",p1,p2);
+    for(i=(*p1);i<=(*p2);i++)
+    {
+        sum=0;
+        for(j=1;j<i;j++)
+        {
+            if(i%j==0)
+            {
+                sum=sum+j;
+            }
+        }
+        if(sum==i)
+        {
+            printf("%d\n",i);
+        }
+    }
+    return 0;
+}

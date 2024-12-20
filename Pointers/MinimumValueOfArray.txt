@@ -1,0 +1,22 @@
+/* Program to find minimum value of the array */
+#include<stdio.h>
+int main()
+{
+    int a[10],n,*p,min;
+    printf("Enter the number of elements to be used\n");
+    scanf("%d",&n);
+    printf("Enter %d values\n",n);
+    for(p=a;p<&a[n];p++)
+    {
+        scanf("%d",p);
+    }
+    min=*a;                     
+    for(p=&a[1];p<&a[n];p++)    
+    {
+        if(min>*p)              
+        {
+            min=*p;             
+        }
+    }
+    printf("Minimum value of the array is %d",min);
+}

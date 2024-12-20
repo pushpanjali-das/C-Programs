@@ -1,0 +1,16 @@
+/* Program to find sum of all the values of the array */
+#include<stdio.h>
+int main()
+{
+    int a[10],n,*p,sum=0;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    for(p=&a[0];p<&a[n];p++)
+    {
+        printf("Enter the value\n");
+        scanf("%d",p);
+        sum=sum+(*p);
+    }
+    printf("Sum of all the elements is %d",sum);
+    return 0;
+}

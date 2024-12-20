@@ -1,0 +1,19 @@
+/* Program to read and print the array. Use pointer to an array */
+#include<stdio.h>
+int main()
+{
+    int a[10],n,*p;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    for(p=a;p<&a[n];p++)
+    {
+        printf("Enter the value\n");
+        scanf("%d",p);
+    }
+    printf("Given array\n");
+    for(p=&a[0];p<&a[n];p++)
+    {
+        printf("%d\t",*p);
+    }
+    return 0;
+}

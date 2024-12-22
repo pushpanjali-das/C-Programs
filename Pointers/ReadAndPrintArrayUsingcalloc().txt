@@ -1,0 +1,22 @@
+/* Program to read and print the array */
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int *p,n,i;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    p=(int*)calloc(n,sizeof(int));
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the value\n");
+        scanf("%d",p+i);
+    }
+    printf("Given array is\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",*(p+i));
+    }
+    free(p);
+    return 0;
+}

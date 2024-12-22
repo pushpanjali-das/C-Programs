@@ -1,0 +1,21 @@
+/* Program to copy a structure to another structure */
+#include<stdio.h>
+struct original
+{
+    int id,m;
+    char name[20],grade;
+    float average;
+};
+int main()
+{
+    struct original ori,dup;
+    printf("Enter student id,name,marks,average and grade\n");
+    scanf("%d %[^\n]%d%f %c",&ori.id,&ori.name,&ori.m,&ori.average,&ori.grade);
+    dup=ori;
+    printf("Original structure values\n");
+    printf("Id:%d\nName:%s\nMarks:%d\nAverage:%f\nGrade:%c\n",ori.id,ori.name,ori.m,ori.average,ori.grade);
+    printf("Duplicate structure values\n");
+    printf("Id:%d\nName:%s\nMarks:%d\nAverage:%f\nGrade:%c\n",dup.id,dup.name,dup.m,dup.average,dup.grade);
+    return 0;
+    
+}

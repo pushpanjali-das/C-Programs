@@ -1,0 +1,30 @@
+Dynamic Memory Allocation:
+__________________________
+
+Normally for all the variables in the program, the memory will be allocated at compile time.
+The process of allocating memory at run time (when user tells how many blocks of memory is required) is known as "Dynamic Memory Allocation"
+Types of Dynamic Memory Allocation:
+__________________________________
+1).malloc() (Memory Allocation):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->A single block of memory will be allocated of specified size and returns a pointer of VOID. So,we can assign it to any type of pointer.
+-->The memory comes with uninitialized garbage values.
+-->If the allocation fails, it returns NULL.
+
+-->Syntax:
+    pointer= (cast type*)malloc(n*sizeof(datatype));
+    malloc allocates one block of n*sizeof(datatype) bytes.
+    n=no.of blocks
+    cast type= data type of the array 
+    
+2.calloc() (Contiguous Allocation):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-->A number of blocks of memory will be allocated each of the specified size returns a pointer of VOID. 
+-->The memory will be initialized with 0's.
+-->If the allocation fails, it returns NULL
+
+-->Syntax:
+pointer=(cast type*)calloc(n,sizeof(datatype));
+
+calloc allocates n blocks of sizeof(datatype)bytes.

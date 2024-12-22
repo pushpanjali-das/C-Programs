@@ -9,13 +9,21 @@ Pointer variable: A variable which stores the address of a normal
                   variable(A variable whose value has been given
                   through the keyboard)
 
-Size of the pointer variable depends on the OS size i.e., 
-    if OS is of 32-bit, size of pointer is 4bytes (32/8=4)
-    if OS is of 64-bit, size of pointer is 8bytes (64/8=8).
+---->Size of the pointer variable depends on the OS size i.e., 
+    	if OS is of 32-bit, size of pointer is 4bytes (32/8=4)
+    	if OS is of 64-bit, size of pointer is 8bytes (64/8=8).
 The size of a pointer does not depend on the type of variable it points to (int, char, float, etc.).
 It only depends on the system's architecture because all pointers must be able to hold the same size memory address.
 
-Incase of turbo c++ compiler, regardless of the system architecture, the size of the pointer remains 2 bytes only because tubo c++ compiler works on DOS environment which has 16 architecture. And it can access addresses upto 65536 
+---->Incase of turbo c++ compiler, regardless of the system architecture, the size of the pointer remains 2 bytes only because tubo c++ compiler works on DOS environment which has 16 architecture. And it can access addresses upto 65536.
+
+
+Type of pointer (int *p, char *p, float *p,double etc) indicates 
+1).The type data that the pointer is pointing to.
+2).Also, it tells how the pointer is moving through the memory i.e., how the pointer points the next location means by advancing by n bytes. 
+3).While dereferencing i.e., while fetching the values stored in the memory that was allotted, type of the pointer tells how many bytes of the memory has to be read
+ to fetch the value.
+ 
 */
 
 #include<stdio.h>

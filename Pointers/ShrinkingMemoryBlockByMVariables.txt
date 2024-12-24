@@ -1,0 +1,36 @@
+/* Deleting some bytes of memory using realloc() */
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,i,*p,m;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    p=(int*)malloc(n*sizeof(int));
+    printf("p=%u\n",p);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the value\n");
+        scanf("%d",p+i);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",*(p+i));
+    }
+    printf("\nEnter the number of variables to be removed\n");
+    scanf("%d",&m);
+    p=(int*)realloc(p,m*sizeof(int));
+    printf("p=%u\n",p);
+    for(i=0;i<n-m;i++)
+    {
+        printf("Enter the value\n");
+        scanf("%d",p+i);
+    }
+    printf("Values after deleting the block by %d variables\n",m);
+    for(i=0;i<n-m;i++)
+    {
+        printf("%d\t",*(p+i));
+    }
+    free(p);
+    return 0;
+}

@@ -1,0 +1,34 @@
+/* Adding extra bytes of memory using realloc() */
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,i,*p,m;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    p=(int*)malloc(n*sizeof(int));
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the value\n");
+        scanf("%d",p+i);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",*(p+i));
+    }
+    printf("\nEnter the number of variables to be added\n");
+    scanf("%d",&m);
+    realloc(p,m);
+    for(i=0;i<m+n;i++)
+    {
+        printf("Enter the value\n");
+        scanf("%d",p+i);
+    }
+    printf("Values after expanding the block by %d variables\n",m);
+    for(i=0;i<m+n;i++)
+    {
+        printf("%d\t",*(p+i));
+    }
+    free(p);
+    return 0;
+}

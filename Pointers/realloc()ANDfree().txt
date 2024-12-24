@@ -1,0 +1,59 @@
+/* Program to demonstrate the use of realloc() and free() functions
+
+    realloc(): 
+    ~~~~~~~~~~
+    1).realloc() is function in c, which is used to resize the previously allotted block of memory.
+    2).Using realloc() we can either EXPAND or SHRINK the available block of memory.
+    3).Syntax:
+        realloc(pointer,n);     "n" * sizeof(pointer type) bytes of                        memory
+        
+        If n is greater than previously allotted block, block gets expanded
+        If n is lesser than previously allotted block, blocks gets shrunk.
+       
+    free():
+    ~~~~~~~
+    1).free() is function c, which is used to free the block of memory which got allotted previously by either calloc() or malloc().
+    2).Even after freeing the memory, the pointer will still point to the previous base address of the block. But it is invalid to access and store values in that 	block anymore. Because OS might have allotted the same block for other purposes etc.
+    3).If new_size is larger than the old size, the existing data is preserved, and additional space is allocated.
+    4).If new_size is smaller than the old size, the block is resized, and excess memory is freed.
+    5).When you call free(p), the memory that p points to is released back to the system, but the pointer p itself still holds the same address value. This is known as 	a DANGLING POINTER. Accessing or modifying memory through a DANGLING POINTER leads to undefined behaviour.
+	
+    6).In the following format also, we can realloc the memory
+	p = realloc(p, n * sizeof(int));
+
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int *p,i,n,rsv;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    p=(int*)calloc(n,sizeof(int));
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the value\n");
+        scanf("%d",p+i);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",*(p+i));
+    }
+    printf("\nEnter the value to resize the memory block\n");
+    scanf("%d",&rsv);
+    realloc(p,rsv);
+    for(i=0;i<rsv;i++)
+    {
+        printf("Enter the value\n");
+        scanf("%d",p+i);
+    }
+    for(i=0;i<rsv;i++)
+    {
+        printf("%d\t",*(p+i));
+    }
+    free(p);
+    p=NULL;
+    printf("\nMemory has been deallocated");
+    return 0;
+}

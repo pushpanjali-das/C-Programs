@@ -1,0 +1,31 @@
+/* Pointers and Strings
+    Name of string acts as a self pointer, i.e., the name holds base address of the string.
+    Ex: char x[40]="Success";
+    Here, x will store the base address of the array, i.e., 'S' (or) 
+    x[0]'s address.
+    Program to print the string
+*/
+#include<stdio.h>
+int main()
+{
+    char x[40]="Success\n",y[40],*p;
+    int i=0;
+    /* Model-1
+    while(x[i]!='\0')
+    {
+        printf("%c",x[i]);
+        i++;
+    }
+    */
+    // Model-2
+    p=&y[0];
+    printf("Enter the string\n");
+    scanf("%[^\n]",y);
+    while(*p!='\0')
+    {
+        printf("%c",*p);
+        p++;
+    }
+    
+    return 0;
+}

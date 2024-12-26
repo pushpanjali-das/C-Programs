@@ -1,0 +1,19 @@
+/* Program to copy a string into another string using pointers */
+#include<stdio.h>
+int main()
+{
+    char x[20],y[20],*px,*py;
+    px=x;
+    py=y;
+    printf("Enter the string\n");
+    scanf("%[^\n]",x);
+    while(*(px)!='\0')
+    {
+        *(py)=*(px);
+        px++;
+        py++;
+    }
+    *(py)=*(px);
+    printf("Old string is %s\nNew string is %s",x,y);
+    return 0;
+}

@@ -1,0 +1,22 @@
+/* Program to concatenate 2 strings using pointers */
+#include<stdio.h>
+int main()
+{
+    char x[20],y[20],*px,*py;
+    px=x;
+    py=y;
+    printf("Enter both the string\n");
+    scanf("%[^\n] %[^\n]",x,y);
+    while(*(px)!='\0')
+    {
+        px++;
+    }
+    while(*(py)!='\0')
+    {
+        *(px)=*(py);
+        px++;
+        py++;
+    }
+    printf("Concatenated string is %s",x);
+    return 0;
+}

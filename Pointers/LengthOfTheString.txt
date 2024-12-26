@@ -1,0 +1,15 @@
+/*Find length of the string using pointers */
+#include<stdio.h>
+int main()
+{
+    char x[20],*p;
+    p=x;
+    printf("Enter the string\n");
+    scanf("%[^\n]",x);
+    while(*(p)!='\0')
+    {
+        p++;
+    }
+    printf("Length of the string is %d",p-x);
+    return 0;
+}

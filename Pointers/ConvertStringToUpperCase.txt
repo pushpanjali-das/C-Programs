@@ -1,0 +1,18 @@
+/* Program to conver the string into upper case using pointers*/
+#include<stdio.h>
+int main()
+{
+    char x[20],*p;
+    p=&x[0];
+    printf("Enter the string\n");
+    scanf("%[^\n]",x);
+    while(*(p)!='\0')
+    {
+        if(*(p)>=97 && *(p)<=122)
+        {
+            *(p)=*(p)-32;
+        }
+        p++;
+    }
+    printf("String in upper case is %s",x);
+}

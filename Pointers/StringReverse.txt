@@ -1,0 +1,25 @@
+/*Program to reverse the string using the pointers*/
+#include<stdio.h>
+int main()
+{
+    char x[20],*fp,*lp,temp;
+    fp=x;
+    lp=x;
+    printf("Enter the string\n");
+    scanf("%[^\n]",x);
+    while(*(lp)!='\0')
+    {
+        lp++;
+    }
+    lp--;
+    while(fp<lp)
+    {
+        temp=*fp;
+        *fp=*lp;
+        *lp=temp;
+        fp++;
+        lp--;
+    }
+    printf("Reverse string is %s",x);
+    return 0;
+}

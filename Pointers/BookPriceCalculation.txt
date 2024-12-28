@@ -1,0 +1,18 @@
+/* Program to find the price of the book based on the number of pages. Cost per each page is 0.25Rs. */
+#include<stdio.h>
+struct book
+{
+    int bno,nop;
+    char bname[40];
+    float price;
+};
+int main()
+{
+  struct book b,*p;
+  p=&b;
+  printf("Enter the book number,name and number of pages\n");
+  scanf("%d %[^\n]%d",&p->bno,p->bname,&p->nop);
+  p->price = p->nop*0.25;
+  printf("%d  %s  %f",p->bno,p->bname,p->price);
+  return 0;
+}

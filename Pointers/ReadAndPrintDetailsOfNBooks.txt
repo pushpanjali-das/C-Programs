@@ -1,0 +1,26 @@
+/* Program to read "n" number of books information and to print them using pointers*/
+#include<stdio.h>
+struct book
+{
+    int bno;
+    char bname[40];
+};
+int main()
+{
+    struct book b[10],*p;
+    int n;
+    p=&b[0];
+    printf("Enter the number of books\n");
+    scanf("%d",&n);
+    for(;p<&b[n];p++)
+    {
+        printf("Enter the book number and name\n");
+        scanf("%d %[^\n]",&p->bno,p->bname);
+    }
+    printf("Books details\n");
+    for(p=&b[0];p<&b[n];p++)
+    {
+        printf("%d  %s\n",p->bno,p->bname);
+    }
+    return 0;
+}

@@ -1,0 +1,27 @@
+/* Pointers and structures:
+   ~~~~~~~~~~~~~~~~~~~~~~~
+   When we are using pointers to structures, when we store the base address of the structure in a pointer variable, still we need to use the address operator " & " while storing the values of the structure. This is because if we don't use the address operator to the pointer, the value will get stored in any of the available memory and not in the correct location. To avoid this it is mandatory to use the " & " before the pointer variable.
+    Ex:
+        In below question, the size of the struct book data type is
+        44 bytes. If &p->bno is not used while reading the input the
+        bno will get stored in any of the 4 bytes out of 44 bytes
+        but not in the 1st 4 bytes of the memory.
+*/
+
+/* Program to read and print the book information */
+#include<stdio.h>
+struct book
+{
+    int bno;
+    char bname[40];
+};
+int main()
+{
+    struct book b,*p;
+    p=&b;
+    printf("Enter the book number and the name\n");
+    scanf("%d %[^\n]",&p->bno,p->bname);
+    printf("Book information\n");
+    printf("%d %s",p->bno,p->bname);
+    return 0;
+}

@@ -1,0 +1,33 @@
+/* Program to check the string is palindrome or not using pointers */
+#include<stdio.h>
+int main()
+{
+    char x[40],*ps,*pe; //ps->base address pointer, pe->end address pointer
+    ps=x;
+    pe=x;
+    printf("Enter the string\n");
+    scanf("%[^\n]",x);
+    while(*pe!='\0')
+    {
+        pe++;
+    }
+    pe--;
+    while(ps<pe)
+    {
+        if(*ps!=*pe)
+        {
+            break;
+        }
+        ps++;
+        pe--;
+    }
+    if(ps>=pe)
+    {
+        printf("%s is palindrome",x);
+    }
+    else
+    {
+        printf("%s is not palindrome",x);
+    }
+    return 0;
+}

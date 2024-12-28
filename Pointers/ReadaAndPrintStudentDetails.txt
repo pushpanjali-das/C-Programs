@@ -1,0 +1,51 @@
+/* Program to read student roll number, name and marks in 3 subjects. Find the student total, average and the result using pointers.
+
+            Average                             Grade
+            ~~~~~~~                           ~~~~~~~~~
+            >=60                                first grade
+            >=50 and <60                        second grade
+            >=35 and <50                        third grade
+            <35                                 no grade
+*/
+#include<stdio.h>
+#include<string.h>
+struct student 
+{
+    int sno,m1,m2,m3,tot;
+    char sname[40],grade[20],result[10];
+    float average;
+};
+int main()
+{
+    struct student s,*p;
+    p=&s;
+    printf("Enter the student number, name and marks in 3 subjects\n");
+    scanf("%d %[^\n]%d%d%d",&p->sno,p->sname,&p->m1,&p->m2,&p->m3);
+    p->tot=p->m1+p->m2+p->m3;
+    p->average=(float)p->tot/3;
+    if(p->m1>=35 && p->m2>=35 && p->m3>=35)
+    {
+        strcpy(p->result,"Passed");
+        if(p->average>=60)
+        {
+            strcpy(p->grade,"First grade");
+        }
+        else if(p->average>=50 && p->average<60)
+        {
+            strcpy(p->grade,"Second grade");
+        }
+        else
+        {
+            strcpy(p->grade,"Third grade");
+        }
+    }
+    else
+    {
+        strcpy(p->result,"Failed");
+        strcpy(p->grade,"No grade");
+    }
+    printf("Student details\n");
+    printf("%d  %s  %d  %.2f  %s  %s",p->sno,p->sname,p->tot,p->average,p->result,p->grade);
+    return 0;
+}
+            

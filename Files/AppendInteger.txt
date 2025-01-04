@@ -1,0 +1,15 @@
+/* Program to append a number in the file */
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	FILE *fp;
+	int n;
+	clrscr();
+	fp=fopen("storeint.txt","a");
+	printf("Enter the number to be appended\n");
+	scanf("%d",&n);
+	putc(n,fp);
+	fclose(fp);
+	return 0;
+}

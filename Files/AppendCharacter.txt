@@ -1,0 +1,15 @@
+/* Program to append a character to a file */
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	FILE *fp;
+	char x;
+	clrscr();
+	fp=fopen("storech.txt","a");
+	printf("Enter the charcater\n");
+	scanf("%c",&x);
+	putc(x,fp);
+	fclose(fp);
+	return 0;
+}

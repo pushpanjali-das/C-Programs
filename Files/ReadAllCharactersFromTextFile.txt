@@ -1,0 +1,16 @@
+/* Program to read all characters from the file */
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	FILE *fp;
+	char c;
+	clrscr();
+	fp=fopen("storech.txt","r");
+	while((c=getc(fp))!=EOF)  //instead of EOF, it's ASCII code -1
+	{                         //can also be used
+	   printf("%c",c);		  //File pointer fp automatically gets incremented.
+	}
+	fclose(fp);				  //Closing the file is an important task.
+	return 0;
+}

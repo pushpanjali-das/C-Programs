@@ -1,0 +1,19 @@
+/* Program to check given file exists or not */
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+  FILE *fp;
+  clrscr();
+  fp=fopen("sophia.txt","r");
+  if(fp==NULL)
+  {
+	printf("File does not exist");
+  }
+  else
+  {
+	printf("File exists");
+  }
+  fclose(fp);
+  return 0;
+}

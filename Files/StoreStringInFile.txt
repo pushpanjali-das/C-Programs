@@ -1,0 +1,15 @@
+/* Program to store a string into the text file */
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	FILE *fp;
+	char x[40];
+	clrscr();
+	fp=fopen("storestr.txt","w");
+	printf("Enter the string\n");
+	scanf("%[^\n]",&x);
+	fputs(x,fp);
+	fclose(fp);
+	return 0;
+}

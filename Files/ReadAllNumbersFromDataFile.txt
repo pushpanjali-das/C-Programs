@@ -1,0 +1,16 @@
+/* Program to read all the integers present in a file */
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	FILE *fp;
+	int x;
+	clrscr();
+	fp=fopen("storeint.dat","r");
+	while((x=getw(fp))!=EOF)
+	{
+		printf("%d\n",x);
+	}
+	fclose(fp);
+	return 0;
+}

@@ -1,0 +1,26 @@
+/* Program to read all books infromation */
+#include<stdio.h>
+#include<conio.h>
+struct book
+{
+	int bno;
+	char bname[20];
+};
+int main()
+{
+	struct book b;
+	FILE *fp;
+	int count=0;
+	clrscr();
+	fp=fopen("bookinfo.dat","r");
+	fread(&b,sizeof(b),1,fp);// to read block of data from file we use this function and this is the widely used function.
+	while(!(feof(fp)))
+	{
+		count++;
+		printf("%d %s\n",b.bno,b.bname);
+		fread(&b,sizeof(b),1,fp);
+	}
+	printf("Successfully read %d records",count);
+	fclose(fp);
+	return 0;
+}

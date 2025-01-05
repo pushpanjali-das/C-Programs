@@ -1,0 +1,21 @@
+/* Program to store book infromation */
+#include<stdio.h>
+#include<conio.h>
+struct book
+{
+	int bno;
+	char bname[20];
+};
+int main()
+{
+	struct book b;
+	FILE *fp;
+	clrscr();
+	fp=fopen("bookinfo.dat","w");
+	printf("Enter book number and name\n");
+	scanf("%d%s",&b.bno,&b.bname);
+	fwrite(&b,sizeof(b),1,fp);    // to write block of data into the file we use fwrite().
+	printf("%d %s",b.bno,b.bname); // fwrite() is the widely used one to write into the files.
+	fclose(fp);
+	return 0;
+}

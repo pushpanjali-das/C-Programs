@@ -6,7 +6,7 @@ int main()
 	FILE *fp;
 	int n;
 	clrscr();
-	fp=fopen("storeint.txt","w");
+	fp=fopen("storeint.dat","w");
 	printf("Enter the integer\n");
 	scanf("%d",&n);
 	putw(n,fp);

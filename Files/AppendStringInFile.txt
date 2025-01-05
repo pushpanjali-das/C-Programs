@@ -1,0 +1,15 @@
+/* Program to append string into a file */
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	FILE *fp;
+	char x[20];
+	clrscr();
+	fp=fopen("storestr.txt","a");
+	printf("Enter the string to be appended\n");
+	scanf("%[^\n]",x);
+	fputs(x,fp);
+	fclose(fp);
+	return 0;
+}

@@ -1,0 +1,23 @@
+/* Program to read all employee infromation from the file */
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	FILE *fp;
+	char ename[20];
+	int eno,count=0;
+	float sal;
+	clrscr();
+	fp=fopen("employee.dat","r");
+	printf("position of fp %d\n",ftell(fp));
+	fscanf(fp,"%d%s%f",&eno,&ename,&sal);
+	while(!(feof(fp)))
+	{
+		count++;
+		printf("%d %s %.2f\n",eno,ename,sal);
+		fscanf(fp,"%d%s%f",&eno,&ename,&sal);
+	}
+	fclose(fp);
+	printf("Number of records printed is %d",count);
+	return 0;
+}

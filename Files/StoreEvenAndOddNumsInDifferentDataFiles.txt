@@ -1,0 +1,55 @@
+/* Program create a data file with the name data.dat and store some integers
+in it and then create even.dat and odd.dat files and store even integers in
+even.dat and odd integers in odd.dat files respectively. */
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	FILE *fp1,*fp2,*fp3;
+	int n,i=1,x;
+	clrscr();
+	fp1=fopen("data.dat","w+");
+	printf("Enter the number of integers to be read\n");
+	scanf("%d",&n);
+	while(i<=n)
+	{
+		printf("Enter the number\n");
+		scanf("%d",&x);
+		putw(x,fp1);
+		i++;
+	}
+	fp2=fopen("even.dat","w+");
+	fp3=fopen("odd.dat","w+");
+	rewind(fp1);				//Brings the fp1 to 1st byte address.
+	while((x=getw(fp1))!=EOF)
+	{
+		if(x%2==0)
+		{
+			putw(x,fp2);
+		}
+		else
+		{
+			putw(x,fp3);
+		}
+	}
+	rewind(fp1);
+	rewind(fp2);
+	rewind(fp3);
+	printf("\ndata.dat file\n");
+	while((x=getw(fp1))!=EOF)
+	{
+		printf("%-5d",x);
+	}
+	printf("\neven.dat file\n");
+	while((x=getw(fp2))!=EOF)
+	{
+		printf("%-5d",x);
+	}
+	printf("\nodd.dat file\n");
+	while((x=getw(fp3))!=EOF)
+	{
+		printf("%-5d",x);
+	}
+	fcloseall();
+	return 0;
+}

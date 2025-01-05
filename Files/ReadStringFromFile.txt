@@ -1,0 +1,14 @@
+/* Program to read string from the text file */
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	FILE *fp;
+	char x[20];
+	clrscr();
+	fp=fopen("storestr.txt","r");
+	fgets(x,16,fp);
+	printf("%s",x);
+	fclose(fp);
+	return 0;
+}

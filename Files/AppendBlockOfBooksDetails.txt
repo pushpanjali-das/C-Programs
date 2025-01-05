@@ -1,0 +1,21 @@
+/* Program to append book infromation */
+#include<stdio.h>
+#include<conio.h>
+struct book
+{
+	int bno;
+	char bname[20];
+};
+int main()
+{
+	struct book b;
+	FILE *fp;
+	clrscr();
+	fp=fopen("bookinfo.dat","a");
+	printf("Enter book number and name\n");
+	scanf("%d%s",&b.bno,&b.bname);
+	fwrite(&b,sizeof(b),1,fp);
+	printf("%d %s",b.bno,b.bname);
+	fclose(fp);
+	return 0;
+}

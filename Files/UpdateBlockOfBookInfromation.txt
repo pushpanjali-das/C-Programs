@@ -1,0 +1,41 @@
+/* Program to update book infromation
+fseek() is a function used to move the file pointer fp to the desired position by using the offset, here we are calculating the fp by using the (i-1)*sizeof(b) parameter.
+3rd in fseek()  can be
+0, 1 or 2, 0 means fp is moved forward by (i-1)*sizeof(b) bytes from the beginig address.
+1 means fp moved forward from the current position, if offset is positive and moved to backward if offset is negative.
+2 means fp moved to backward if offset is negative and fp will in current pos if offset is 0 (which is for all the cases.)
+*/
+#include<stdio.h>
+#include<conio.h>
+struct book
+{
+	int bno;
+	char bname[20];
+};
+int main()
+{
+	FILE *fp;
+	struct book b;
+	int se,i=0;
+	clrscr();
+	fp=fopen("bookinfo.dat","r+");
+	fread(&b,sizeof(b),1,fp);
+	printf("Enter the book number\n");
+	scanf("%d",&se);
+	while(!feof(fp))
+	{
+		i++;
+		if(se==b.bno)
+		{                                	//fseek() is used to bring the file pointer to desired position
+			fseek(fp,(i-1)*sizeof(b),0); 	//brings the fp to the begining of record where we want to update (or) brings to end of the record where the 								next record has to be updated.
+			printf("Enter the new bno, bname\n");
+			scanf("%d%s",&b.bno,&b.bname);
+			fwrite(&b,sizeof(b),1,fp);
+			printf("Updated the record successfully\n");
+			break;
+		}
+		fread(&b,sizeof(b),1,fp);
+	}
+	fclose(fp);
+	return 0;
+}

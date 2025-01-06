@@ -1,0 +1,33 @@
+/* Program to delete book infromation */
+#include<stdio.h>
+#include<conio.h>
+struct book
+{
+	int bno;
+	char bname[20];
+};
+int main()
+{
+	FILE *fp1,*fp2;
+	struct book b;
+	int se;
+	clrscr();
+	fp1=fopen("bookinfo.dat","r");
+	fp2=fopen("newbook.dat","w");
+	printf("Enter the book number to be deleted\n");
+	scanf("%d",&se);
+	fread(&b,sizeof(b),1,fp1);
+	while(!feof(fp1))
+	{
+		if(se!=b.bno)
+		{
+			fwrite(&b,sizeof(b),1,fp2);
+		}
+		fread(&b,sizeof(b),1,fp1);
+	}
+	fcloseall();
+	remove("bookinfo.dat");
+	rename("newbook.dat","bookinfo.dat");
+	printf("Record has been deleted successfully\n");
+	return 0;
+}

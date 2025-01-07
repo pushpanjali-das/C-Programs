@@ -1,0 +1,62 @@
+/* Program to sort the given array and then find the median of the array 
+
+    a[4]={1,2,3,4};
+    m=(a[4/2]+a[4/2-1])/2=(a[2]+a[1])/2=(3+2)/2=2.5
+    
+    a[5]={1,2,3,4,5};
+    m=a[5/2]=a[2]=3
+
+*/
+#include<stdio.h>
+#include<stdlib.h>
+void bubblesort(int *p,int n)
+{
+    int i,j,temp;
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-i-1;j++)
+        {
+            if(*(p+j)>*(p+j+1))
+            {
+                temp=*(p+j);
+                *(p+j)=*(p+j+1);
+                *(p+j+1)=temp;
+            }
+        }
+    }
+}
+void emedian(int *p,int n)
+{
+    float m;
+    m=(*(p+n/2)+*(p+n/2-1))/2.0;
+    printf("Median is %f",m);
+}
+void omedian(int *p,int n)
+{
+    int m;
+    m=*(p+n/2);
+    printf("Median is %d",m);
+}
+int main()
+{
+    int *p,n,i;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    p=(int *)malloc(n*sizeof(int));
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the element\n");
+        scanf("%d",p+i);
+    }
+    bubblesort(p,n);
+    if(n%2==0)
+    {
+        emedian(p,n);
+    }
+    else
+    {
+        omedian(p,n);
+    }
+    free(p);
+    return 0;
+}

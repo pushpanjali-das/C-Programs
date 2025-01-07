@@ -1,0 +1,56 @@
+/* Program to remove duplicates from the given sorted array */
+#include<stdio.h>
+int main()
+{
+    int a[10],i,res[10],k=0,n,ch;
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    printf("1.Ascending order\n");
+    printf("2.Decending order\n");
+    printf("Select in which order do want to enter the numbers\n");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1:
+            for(i=0;i<n;i++)
+            {
+                printf("Enter the number\n");
+                scanf("%d",&a[i]);
+                if(i>0 && a[i]<a[i-1])
+                {
+                    printf("Enter numbers in ascending order only.Exiting\n");
+                    return 1;
+                }
+            }
+            break;
+        case 2:
+            for(i=0;i<n;i++)
+            {
+                printf("Enter the number\n");
+                scanf("%d",&a[i]);
+                if(i>0 && a[i]>a[i-1])
+                {
+                    printf("Enter numbers in decending order only.Exiting.\n");
+                    return -1;
+                }
+            }
+            break;
+        default:
+            printf("Please select a valid choice\n");
+            break;
+    }
+    for(i=0;i<n;i++)
+    {
+        if(i==0||a[i]!=a[i-1])
+        {
+            res[k]=a[i];
+            k++;
+        }
+    }
+    printf("Array after removing duplicate elements is\n");
+    for(i=0;i<k;i++)
+    {
+        printf("%d\t",res[i]);
+    }
+    return 0;
+}

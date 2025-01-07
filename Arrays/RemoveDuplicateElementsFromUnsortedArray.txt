@@ -1,0 +1,36 @@
+/* Program to remove duplicate elements from unsorted array */
+#include<stdio.h>
+int main()
+{
+    int a[10],n,i,j,isdup,k=0,res[10];
+    printf("Enter the number of variables to be used\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the number\n");
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        isdup=0;
+        for(j=0;j<i;j++)
+        {
+            if(a[i]==a[j])
+            {
+                isdup=1;
+                break;
+            }
+        }
+        if(isdup==0)
+        {
+            res[k]=a[i];
+            k++;
+        }
+    }
+    printf("Array after removing duplicate elements is\n");
+    for(i=0;i<k;i++)
+    {
+        printf("%d\t",res[i]);
+    }
+    return 0;
+}
